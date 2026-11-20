@@ -24,11 +24,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f8fafc;
+    background: #061324;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+    background: #1e293b;
     border-radius: 4px;
 }
 
@@ -45,38 +45,117 @@ html {
     scrollbar-width: none;
 }
 
+/* Liquid Water Wave Animation Keyframes */
+@keyframes waterWaveFlow {
+    0% { transform: translateX(0) translateZ(0) scaleY(1); }
+    50% { transform: translateX(-25%) translateZ(0) scaleY(0.85); }
+    100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+@keyframes floatGentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+}
+
+@keyframes pulseGlowAqua {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 167, 159, 0.2), inset 0 0 10px rgba(0, 167, 159, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 28px rgba(0, 167, 159, 0.4), inset 0 0 16px rgba(0, 167, 159, 0.2);
+    }
+}
+
+@keyframes waterRipple {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+.animate-float-gentle {
+    animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-pulse-aqua {
+    animation: pulseGlowAqua 3s ease-in-out infinite;
+}
+
+.ripple-ring {
+    position: absolute;
+    inset: -12px;
+    border-radius: 9999px;
+    border: 2px solid rgba(0, 167, 159, 0.4);
+    animation: waterRipple 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    pointer-events: none;
+}
+
+.ripple-ring:nth-child(2) {
+    animation-delay: 1.25s;
+}
+
+/* Instagram Story Avatar Rings */
+.story-ring-gradient {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    padding: 2.5px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.story-ring-teal {
+    background: linear-gradient(135deg, #00A79F, #26D0C7, #38BDF8);
+    padding: 2.5px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.story-ring-gradient:hover,
+.story-ring-teal:hover {
+    transform: scale(1.08);
+}
+
 /* Active Category Pill - Matching Logo Teal */
 .cat-filter-btn.active-filter {
-    background-color: #0A1E36 !important;
-    color: #ffffff !important;
-    border-color: #00A79F !important;
-    box-shadow: 0 2px 8px rgba(0, 167, 159, 0.25) !important;
-    font-weight: 700 !important;
+    background-color: #00A79F !important;
+    color: #061324 !important;
+    border-color: #26D0C7 !important;
+    box-shadow: 0 4px 14px rgba(0, 167, 159, 0.4) !important;
+    font-weight: 800 !important;
 }
 
 /* Premium Card Hover & Transitions */
 .product-item {
     content-visibility: auto;
     contain-intrinsic-size: 340px;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
     will-change: transform;
 }
 
 .product-item:hover {
     border-color: #00A79F;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(0, 167, 159, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -6px rgba(0, 167, 159, 0.25);
 }
 
 /* Active tap feel for mobile shopping */
 .product-item:active {
-    transform: scale(0.99);
+    transform: scale(0.98);
 }
 
 /* Input focus ring with brand teal */
 input:focus {
     border-color: #00A79F !important;
-    box-shadow: 0 0 0 3px rgba(0, 167, 159, 0.18) !important;
+    box-shadow: 0 0 0 3px rgba(0, 167, 159, 0.25) !important;
 }
 
 /* Smooth line clamps */
