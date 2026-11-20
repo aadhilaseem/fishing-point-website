@@ -1,5 +1,5 @@
 // ==========================================================================
-// Fishing Point - Performance-Optimized Client-Side Script
+// Fishing Point - Mobile-First High Performance Interactivity
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,13 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // WhatsApp Store Phone Number (Fishing Point - Pappan)
 const STORE_WHATSAPP_NUMBER = "919567330366";
 
-// --- 1. Instant Cache Service Worker Registration ---
+// --- 1. Service Worker for Instant Caching ---
 function registerServiceWorker() {
     if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js')
-                .then(() => console.log('⚡ Fishing Point Fast-Cache Ready'))
-                .catch(() => {});
+            navigator.serviceWorker.register('./sw.js').catch(() => {});
         });
     }
 }
@@ -60,7 +58,7 @@ let currentCategory = 'all';
 function filterCategory(category) {
     currentCategory = category;
     
-    // Update button active styles across both desktop & mobile category bars
+    // Update button active styles across all category buttons
     const filterButtons = document.querySelectorAll('.cat-filter-btn');
     for (let i = 0; i < filterButtons.length; i++) {
         const btn = filterButtons[i];
@@ -76,30 +74,35 @@ function filterCategory(category) {
     applyFilters();
 }
 
-// --- 4. High-Performance Debounced Live Search ---
+// --- 4. Synchronized Live Search (Desktop & Mobile) ---
 function initSearch() {
-    const desktopSearch = document.getElementById('gearSearch');
-    const mobileSearch = document.getElementById('mobileSearch');
+    const inputs = [
+        document.getElementById('gearSearch'),
+        document.getElementById('gearSearchDesktop'),
+        document.getElementById('gearSearchMobile')
+    ].filter(Boolean);
+
     let debounceTimer;
 
-    const handleSearch = (e) => {
-        clearTimeout(debounceTimer);
-        const val = e.target.value;
-        if (desktopSearch && e.target !== desktopSearch) desktopSearch.value = val;
-        if (mobileSearch && e.target !== mobileSearch) mobileSearch.value = val;
+    inputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            const val = e.target.value;
+            // Sync all other search fields
+            inputs.forEach(other => {
+                if (other !== e.target) other.value = val;
+            });
 
-        debounceTimer = setTimeout(() => {
-            applyFilters();
-        }, 60); // 60ms debounce for 60fps responsiveness
-    };
-
-    if (desktopSearch) desktopSearch.addEventListener('input', handleSearch);
-    if (mobileSearch) mobileSearch.addEventListener('input', handleSearch);
+            debounceTimer = setTimeout(() => {
+                applyFilters();
+            }, 50);
+        });
+    });
 }
 
 function applyFilters() {
-    const desktopSearch = document.getElementById('gearSearch');
-    const query = desktopSearch ? desktopSearch.value.toLowerCase().trim() : '';
+    const searchEl = document.getElementById('gearSearch') || document.getElementById('gearSearchDesktop');
+    const query = searchEl ? searchEl.value.toLowerCase().trim() : '';
     const products = document.querySelectorAll('.product-item');
     const noResults = document.getElementById('noResults');
     let visibleCount = 0;
@@ -129,9 +132,9 @@ function applyFilters() {
     }
 }
 
-// --- 5. Direct WhatsApp Order Generator with Product Specs ---
+// --- 5. Direct WhatsApp Order Generator ---
 function orderViaWhatsApp(productName, price) {
-    const message = `Hello Fishing Point! 🎣\n\nI want to enquire about/order this item:\n*Product:* ${productName}\n*Price Reference:* ${price}\n\nCould you please let me know current stock availability at your Kochi shop and delivery options?`;
+    const message = `Hello Fishing Point! 🎣\n\nI want to enquire about/order this gear:\n*Product:* ${productName}\n*Price Reference:* ${price}\n\nCould you please let me know stock availability at your Alappuzha shop (Near Iron Bridge) and delivery options?`;
     const encoded = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encoded}`;
     window.open(whatsappUrl, '_blank');

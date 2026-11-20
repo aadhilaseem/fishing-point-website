@@ -2,19 +2,17 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fishing Point | Premium Tackle, Rods, Reels & Angling Gear</title>
-    <meta name="description" content="Fishing Point is Kerala's trusted fishing tackle shop for authentic rods, saltwater reels, Japanese lures, braided lines, and terminal tackle. Authorized dealer for top angling brands.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Fishing Point Alappuzha | ഒരു ചൂണ്ടക്കട - Premium Fishing Tackle</title>
+    <meta name="description" content="Fishing Point (ഒരു ചൂണ്ടക്കട) is Alappuzha's trusted fishing tackle hub near Iron Bridge. Authorized dealer for Shimano, Daiwa, Rapala, and Mustad. 13K+ angler community.">
     
-    <!-- High-Speed Resource Preconnects & DNS Prefetch -->
+    <!-- High-Speed Resource Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Preload Critical Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Fonts: Plus Jakarta Sans & Outfit for luxury modern retail -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -27,19 +25,20 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#0f2942',
-                            dark: '#0a1d30',
-                            blue: '#1b4d79',
-                            ocean: '#0284c7',
-                            light: '#f1f5f9',
-                            orange: '#f97316',
-                            red: '#dc2626',
-                            emerald: '#16a34a'
+                            teal: '#00A79F',
+                            tealDark: '#00857E',
+                            tealLight: '#26D0C7',
+                            navy: '#0A1E36',
+                            deepOcean: '#061324',
+                            waterBlue: '#0284C7',
+                            ice: '#F0F9FF',
+                            accent: '#F97316'
                         }
                     },
                     fontFamily: {
-                        heading: ['Montserrat', 'sans-serif'],
-                        sans: ['Inter', 'sans-serif']
+                        heading: ['Outfit', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mal: ['Noto Sans Malayalam', 'sans-serif']
                     }
                 }
             }
@@ -48,722 +47,177 @@
     
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-teal selection:text-white pb-20 sm:pb-0">
 
-    <!-- Top Info Utility Bar -->
-    <div class="bg-brand-navy text-slate-200 text-xs py-2 px-4 border-b border-brand-dark/50">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div class="flex items-center gap-4 text-center sm:text-left">
-                <span class="flex items-center gap-1.5 text-brand-orange font-semibold">
-                    <i class="fa-solid fa-truck-fast"></i> Delivery Across Kerala & India
+    <!-- Top Utility Bar: Clean & Informative -->
+    <div class="bg-brand-deepOcean text-slate-300 text-[11px] sm:text-xs py-2 px-3 sm:px-6 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 truncate">
+                <span class="inline-flex items-center gap-1.5 text-brand-tealLight font-semibold">
+                    <i class="fa-solid fa-water"></i> <span class="hidden xs:inline">Alappuzha's #1</span> ഒരു ചൂണ്ടക്കട
                 </span>
-                <span class="hidden md:inline text-slate-500">|</span>
-                <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="hover:text-pink-400 flex items-center gap-1.5 transition-colors text-pink-300 font-semibold">
-                    <i class="fa-brands fa-instagram text-sm"></i> @fishing_point_oru_choondakkada (13K Followers)
-                </a>
+                <span class="text-slate-600 hidden sm:inline">•</span>
+                <span class="text-slate-300 hidden md:inline">Near Iron Bridge, Chakkara Kadavu, Alappuzha</span>
             </div>
-            <div class="flex items-center gap-4 font-medium">
-                <a href="tel:+919567330366" class="hover:text-white flex items-center gap-1.5 transition-colors">
-                    <i class="fa-solid fa-phone text-brand-orange"></i> +91 95673 30366
+            <div class="flex items-center gap-3 font-medium flex-shrink-0">
+                <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="text-pink-400 hover:text-pink-300 flex items-center gap-1 transition-colors">
+                    <i class="fa-brands fa-instagram text-xs"></i> <span class="font-bold">13K</span>
                 </a>
                 <span class="text-slate-600">|</span>
-                <a href="#store-location" class="hover:text-white flex items-center gap-1.5 transition-colors">
-                    <i class="fa-solid fa-location-dot text-brand-orange"></i> Shop: Iron Bridge, Alappuzha
+                <a href="tel:+919567330366" class="hover:text-white flex items-center gap-1 transition-colors">
+                    <i class="fa-solid fa-phone text-brand-teal"></i> <span class="hidden xs:inline">+91 95673 30366</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm" id="mainHeader">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+    <!-- Main Header: Clean App-like Sticky Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex items-center justify-between gap-3">
             
-            <!-- Authentic Brand Logo -->
-            <a href="#" class="flex items-center gap-3 flex-shrink-0 group">
-                <img src="assets/logo-icon.png" alt="Fishing Point Alappuzha" class="h-12 w-auto object-contain rounded-md">
+            <!-- Authentic Brand Identity with Logo -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group">
+                <img src="assets/logo-icon.png" alt="Fishing Point Logo" class="h-10 sm:h-12 w-auto object-contain rounded-lg shadow-xs group-hover:scale-105 transition-transform">
                 <div>
-                    <span class="font-heading font-black text-2xl tracking-tight text-brand-navy uppercase block leading-none">
-                        FISHING <span class="text-brand-blue">POINT</span>
-                    </span>
-                    <span class="text-xs tracking-wide text-brand-blue font-bold block mt-0.5 font-sans">
-                        ഒരു ചൂണ്ടക്കട <span class="text-slate-400 font-medium">| Alappuzha</span>
+                    <div class="flex items-center gap-1.5 leading-none">
+                        <span class="font-heading font-black text-xl sm:text-2xl tracking-tight text-brand-navy uppercase">
+                            FISHING <span class="text-brand-teal">POINT</span>
+                        </span>
+                    </div>
+                    <span class="text-[11px] sm:text-xs font-bold text-brand-tealDark block mt-0.5 font-mal leading-tight">
+                        ഒരു ചൂണ്ടക്കട <span class="text-slate-400 font-sans font-medium">| Alappuzha</span>
                     </span>
                 </div>
             </a>
 
-            <!-- Search Bar in Center (E-commerce Style) -->
-            <div class="hidden md:flex items-center flex-1 max-w-lg mx-6">
+            <!-- Search Bar in Center (Desktop View) -->
+            <div class="hidden md:flex items-center flex-1 max-w-md mx-6">
                 <div class="relative w-full">
-                    <input type="text" id="gearSearch" placeholder="Search rods, spinning reels, poppers, braids..." class="w-full bg-slate-100 border border-slate-300 rounded-lg pl-10 pr-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                    <input type="text" id="gearSearchDesktop" placeholder="Search rods, reels, poppers, braids..." class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-10 pr-4 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-teal focus:bg-white focus:ring-2 focus:ring-brand-teal/20 transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
                 </div>
             </div>
 
-            <!-- Header Action Items -->
-            <div class="flex items-center gap-3">
-                <a href="https://wa.me/919567330366?text=Hi%20Fishing%20Point,%20I%20am%20looking%20for%20fishing%20gear." target="_blank" class="px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span class="hidden sm:inline">WhatsApp Order</span>
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="https://wa.me/919567330366?text=Hi%20Pappan,%20I%20am%20looking%20for%20fishing%20gear%20inquiry%20at%20Fishing%20Point%20Alappuzha." target="_blank" class="px-3 sm:px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-all transform active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
+                    <span class="hidden xs:inline">Order via WhatsApp</span>
+                    <span class="xs:hidden">Chat</span>
                 </a>
 
-                <!-- Mobile Hamburger Toggle -->
-                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">
-                    <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="md:hidden p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">
+                    <i class="fa-solid fa-bars text-base" id="menuIcon"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Category Mega Nav Bar -->
-        <div class="hidden lg:block bg-slate-100 border-t border-slate-200 text-xs font-semibold text-slate-700">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-                <nav class="flex items-center gap-1 py-1">
-                    <button onclick="filterCategory('all')" class="cat-filter-btn active-filter px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="all">
-                        All Products
-                    </button>
-                    <button onclick="filterCategory('rods')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="rods">
-                        Fishing Rods
-                    </button>
-                    <button onclick="filterCategory('reels')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="reels">
-                        Reels
-                    </button>
-                    <button onclick="filterCategory('lures')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="lures">
-                        Lures & Jigs
-                    </button>
-                    <button onclick="filterCategory('lines')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="lines">
-                        Braided Lines & Leaders
-                    </button>
-                    <button onclick="filterCategory('terminal')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="terminal">
-                        Hooks & Terminal Tackle
-                    </button>
-                    <button onclick="filterCategory('accessories')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="accessories">
-                        Accessories & Bags
-                    </button>
-                </nav>
-                <div class="flex items-center gap-2 text-brand-red font-bold uppercase tracking-wider text-[11px]">
-                    <i class="fa-solid fa-bolt"></i> Combo Deals Available
-                </div>
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-200 px-5 py-4 space-y-3 shadow-lg">
+            <!-- Mobile Search Bar -->
+            <div class="relative">
+                <input type="text" id="gearSearchMobile" placeholder="Search reels, rods, lures, hooks..." class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-brand-teal focus:bg-white">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
             </div>
-        </div>
+            
+            <div class="grid grid-cols-2 gap-2 text-xs font-semibold pt-1">
+                <button onclick="filterCategory('all'); closeMobileMenu();" class="py-2.5 px-3 rounded-lg bg-slate-100 text-slate-800 text-left hover:bg-brand-teal hover:text-white transition-colors">⚡ All Tackle</button>
+                <button onclick="filterCategory('rods'); closeMobileMenu();" class="py-2.5 px-3 rounded-lg bg-slate-100 text-slate-800 text-left hover:bg-brand-teal hover:text-white transition-colors">🎋 Fishing Rods</button>
+                <button onclick="filterCategory('reels'); closeMobileMenu();" class="py-2.5 px-3 rounded-lg bg-slate-100 text-slate-800 text-left hover:bg-brand-teal hover:text-white transition-colors">⚙️ Reels</button>
+                <button onclick="filterCategory('lures'); closeMobileMenu();" class="py-2.5 px-3 rounded-lg bg-slate-100 text-slate-800 text-left hover:bg-brand-teal hover:text-white transition-colors">🐟 Lures & Poppers</button>
+                <button onclick="filterCategory('lines'); closeMobileMenu();" class="py-2.5 px-3 rounded-lg bg-slate-100 text-slate-800 text-left hover:bg-brand-teal hover:text-white transition-colors">🧵 8X Braids</button>
+                <button onclick="filterCategory('terminal'); closeMobileMenu();" class="py-2.5 px-3 rounded-lg bg-slate-100 text-slate-800 text-left hover:bg-brand-teal hover:text-white transition-colors">🪝 Hooks & Terminal</button>
+            </div>
 
-        <!-- Mobile Drawer -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-4 space-y-3">
-            <div class="relative mb-3">
-                <input type="text" id="mobileSearch" placeholder="Search gear..." class="w-full bg-slate-100 border border-slate-300 rounded-lg pl-9 pr-3 py-2 text-sm">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-            </div>
-            <div class="flex flex-col gap-1 text-sm font-medium text-slate-700">
-                <button onclick="filterCategory('all'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">All Products</button>
-                <button onclick="filterCategory('rods'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Fishing Rods</button>
-                <button onclick="filterCategory('reels'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Spinning & Casting Reels</button>
-                <button onclick="filterCategory('lures'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Lures, Poppers & Metal Jigs</button>
-                <button onclick="filterCategory('lines'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Lines & Braids</button>
-                <button onclick="filterCategory('accessories'); closeMobileMenu();" class="text-left py-2 hover:text-brand-blue">Tackle Boxes & Accessories</button>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                <span class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-brand-teal"></i> Iron Bridge, Alappuzha</span>
+                <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="text-pink-600 font-bold">13K Instagram</a>
             </div>
         </div>
     </header>
 
-    <!-- Retail Hero Banner (Clean, Realistic Outdoors Style like Cabral) -->
-    <section class="bg-gradient-to-r from-brand-navy via-brand-dark to-slate-900 text-white py-12 md:py-16 relative overflow-hidden">
+    <!-- Hero Section: Premium Deep Water Theme matching Logo -->
+    <section class="relative bg-gradient-to-br from-brand-deepOcean via-brand-navy to-[#052c42] text-white py-8 sm:py-14 overflow-hidden border-b border-brand-teal/20">
+        <!-- Subtle Water Wave Background Elements -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#00A79F_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -top-24 right-0 w-80 h-80 bg-brand-teal/20 rounded-full blur-3xl pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
                 
-                <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-orange/20 border border-brand-orange/40 text-brand-orange text-xs font-bold uppercase tracking-wider">
-                        Authorized Tackle Dealer
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-3 sm:space-y-4 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-teal/15 border border-brand-teal/40 text-brand-tealLight text-[11px] sm:text-xs font-bold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-brand-tealLight animate-ping"></span>
+                        ഒരു ചൂണ്ടക്കട • Alappuzha's Trusted Tackle Store
                     </div>
                     
-                    <h1 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase">
-                        PREMIUM FISHING TACKLE FOR PASSIONATE ANGLERS
+                    <h1 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase">
+                        PREMIUM FISHING TACKLE & REELS
                     </h1>
                     
-                    <p class="text-slate-300 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
-                        Authorized retailer for world-class angling brands. Saltwater-rated spinning reels, high-modulus carbon rods, Japanese topwater lures, and braided lines built for tough Kerala backwaters and deep sea gamefish.
+                    <p class="text-slate-300 text-xs sm:text-sm sm:max-w-lg mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Authorized dealer for <strong>Shimano, Daiwa, Rapala & Mustad</strong> in Alappuzha. Handpicked carbon rods, saltwater-sealed reels, tournament braids, and high-action lures for Vembanad backwaters and sea angling.
                     </p>
 
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-                        <a href="#productCatalog" class="px-6 py-3 rounded-lg bg-brand-orange hover:bg-orange-600 text-white font-bold text-sm shadow-md transition-colors">
-                            Explore Tackle Catalog
+                    <!-- Quick Action Chips -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1 sm:pt-2">
+                        <a href="#tackleCatalog" class="px-5 py-2.5 rounded-xl bg-brand-teal hover:bg-brand-tealDark text-brand-deepOcean font-extrabold text-xs shadow-md transition-all transform active:scale-95 flex items-center gap-1.5">
+                            <i class="fa-solid fa-compass"></i>
+                            <span>Explore Catalog</span>
                         </a>
-                        <a href="https://wa.me/919567330366?text=Hi%20Fishing%20Point,%20I%20am%20looking%20for%20rod%20and%20reel%20recommendation." target="_blank" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-colors flex items-center gap-2">
+                        <a href="https://wa.me/919567330366?text=Hi%20Pappan,%20I%20am%20looking%20for%20fishing%20gear%20recommendation%20at%20Fishing%20Point." target="_blank" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs transition-colors flex items-center gap-1.5">
                             <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-                            <span>Ask for Pro Advice</span>
+                            <span>Consult Pappan</span>
+                        </a>
+                        <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="px-3 py-2.5 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 border border-pink-500/30 text-pink-300 font-semibold text-xs transition-colors flex items-center gap-1.5">
+                            <i class="fa-brands fa-instagram text-pink-400"></i>
+                            <span>13K Community</span>
                         </a>
                     </div>
                 </div>
 
+                <!-- Right Hero Feature: Clean Store Information Card -->
                 <div class="lg:col-span-5">
-                    <!-- Clean Store Highlights Card (Authentic Alappuzha Shop) -->
-                    <div class="bg-white text-slate-800 rounded-xl p-6 shadow-xl border border-slate-200">
-                        <div class="border-b border-slate-100 pb-3 mb-4">
-                            <div class="flex items-center justify-between">
-                                <span class="bg-blue-50 text-brand-blue font-bold text-[10px] px-2.5 py-1 rounded border border-blue-200 uppercase tracking-wide">
-                                    <i class="fa-solid fa-shop text-brand-blue"></i> ഒരു ചൂണ്ടക്കട • Alappuzha
-                                </span>
-                                <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="text-[11px] text-pink-600 font-bold hover:underline flex items-center gap-1">
-                                    <i class="fa-brands fa-instagram"></i> 13K Community
-                                </a>
-                            </div>
-                            <h3 class="font-heading font-bold text-lg text-brand-navy mt-2">Fishing Point — Alappuzha</h3>
-                            <p class="text-xs text-slate-500 mt-0.5">Near Iron Bridge (Irumbupalam), Chakkara Kadavu, Alappuzha</p>
-                        </div>
-
-                        <div class="space-y-3 text-xs text-slate-600 mb-5">
-                            <div class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
-                                <span><strong>Vembanad & Coastal Gear:</strong> Specialized in backwater & sea fishing tackle</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
-                                <span><strong>Beginner Friendly:</strong> Personal guidance on choosing rods, reels & live baits</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
-                                <span><strong>Free Spooling:</strong> Free braid spooling & leader knot tying at our shop</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
-                                <span><strong>Store Timings:</strong> 7:00 AM – 9:00 PM (Open 7 Days a week)</span>
-                            </div>
-                        </div>
-
-                        <a href="https://wa.me/919567330366?text=Hello%20Pappan,%20I%20am%20looking%20for%20fishing%20gear%20inquiry%20at%20Fishing%20Point%20Alappuzha." target="_blank" class="w-full py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm">
-                            <i class="fa-brands fa-whatsapp text-base"></i>
-                            <span>Chat with Pappan on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Brands Banner (Crucial for real e-commerce feel) -->
-    <section class="bg-white border-b border-slate-200 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">
-                    Authorized Gear & Brands:
-                </span>
-                <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-600 font-heading font-black text-lg tracking-wider">
-                    <span class="hover:text-brand-navy cursor-pointer">SHIMANO</span>
-                    <span class="hover:text-brand-navy cursor-pointer">DAIWA</span>
-                    <span class="hover:text-brand-navy cursor-pointer">PENN</span>
-                    <span class="hover:text-brand-navy cursor-pointer">RAPALA</span>
-                    <span class="hover:text-brand-navy cursor-pointer">MUSTAD</span>
-                    <span class="hover:text-brand-navy cursor-pointer">ABU GARCIA</span>
-                    <span class="hover:text-brand-navy cursor-pointer">BERKLEY</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Trust Badges -->
-    <section class="py-6 bg-slate-100 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
-                    <div class="w-10 h-10 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0 text-lg">
-                        <i class="fa-solid fa-shield-check"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-brand-navy">100% Genuine Gear</h4>
-                        <p class="text-[11px] text-slate-500">Direct authorized stock</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
-                    <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 text-lg">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-brand-navy">Fast WhatsApp Orders</h4>
-                        <p class="text-[11px] text-slate-500">Quick stock check & dispatch</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
-                    <div class="w-10 h-10 rounded-full bg-orange-50 text-brand-orange flex items-center justify-center flex-shrink-0 text-lg">
-                        <i class="fa-solid fa-truck-ramp-box"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-brand-navy">Kerala & All-India Shipping</h4>
-                        <p class="text-[11px] text-slate-500">Secure parcel packing</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
-                    <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0 text-lg">
-                        <i class="fa-solid fa-handshake-simple"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-brand-navy">Store Spooling & Rigging</h4>
-                        <p class="text-[11px] text-slate-500">Visit our Kochi shop</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main E-Commerce Product Catalog Section -->
-    <section id="productCatalog" class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-8 gap-4">
-                <div>
-                    <h2 class="font-heading font-extrabold text-2xl text-brand-navy uppercase">
-                        Current Tackle Inventory
-                    </h2>
-                    <p class="text-xs text-slate-500 mt-1">
-                        Select a category below or search gear. Click any product to order directly via WhatsApp.
-                    </p>
-                </div>
-
-                <!-- Category Filters (Button Pills) -->
-                <div class="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none text-xs font-semibold">
-                    <button onclick="filterCategory('all')" class="cat-filter-btn active-filter px-3.5 py-1.5 rounded-full border border-slate-300 bg-brand-navy text-white whitespace-nowrap" data-cat="all">All</button>
-                    <button onclick="filterCategory('rods')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="rods">Rods</button>
-                    <button onclick="filterCategory('reels')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="reels">Reels</button>
-                    <button onclick="filterCategory('lures')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="lures">Lures & Jigs</button>
-                    <button onclick="filterCategory('lines')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="lines">Braids</button>
-                    <button onclick="filterCategory('terminal')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="terminal">Terminal Tackle</button>
-                    <button onclick="filterCategory('accessories')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="accessories">Accessories</button>
-                </div>
-            </div>
-
-            <!-- Products Grid Container -->
-            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                
-                <!-- Product 1: Shimano Sienna Reel -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="reels" data-name="Shimano Sienna 4000 FG Spinning Reel">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/reel.jpg" alt="Shimano Sienna 4000 FG" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">SHIMANO</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Saltwater Spinning Reel</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Shimano Sienna 4000 FG Spinning Reel
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Max Drag:</strong> 8.5 kg</div>
-                                <div><strong>Bearings:</strong> 3+1 BB</div>
-                                <div><strong>Ratio:</strong> 5.2:1</div>
-                                <div><strong>Spool:</strong> 4000 AR-C</div>
-                            </div>
-                            <div class="pt-1 flex items-baseline justify-between">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 sm:p-5 text-white shadow-xl space-y-3">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                            <div class="flex items-center gap-2">
+                                <img src="assets/logo-icon.png" alt="Fishing Point" class="h-9 w-auto object-contain">
                                 <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹3,450</span>
+                                    <h3 class="font-heading font-bold text-sm sm:text-base text-white leading-tight">Fishing Point Alappuzha</h3>
+                                    <span class="text-[10px] sm:text-xs text-brand-tealLight font-mal">ഒരു ചൂണ്ടക്കട • Near Iron Bridge</span>
                                 </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
                             </div>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold">
+                                Open Today
+                            </span>
                         </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Shimano Sienna 4000 FG Spinning Reel', '₹3,450')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Product 2: Daiwa Crossfire Rod -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="rods" data-name="Daiwa Crossfire X 2.4m Carbon Spinning Rod">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/rod.jpg" alt="Daiwa Crossfire Rod" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">DAIWA</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Carbon Spinning Rod</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Daiwa Crossfire X 2.4m Spinning Rod (Medium-Heavy)
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Length:</strong> 2.4m (8ft)</div>
-                                <div><strong>Sections:</strong> 2-Piece</div>
-                                <div><strong>Lure Wt:</strong> 14-40g</div>
-                                <div><strong>Guides:</strong> Titanium Oxide</div>
+                        <!-- 4 Highlights Grid on Mobile -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-200">
+                            <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                                <i class="fa-solid fa-shield-check text-brand-tealLight mr-1"></i>
+                                <span>100% Genuine Brands</span>
                             </div>
-                            <div class="pt-1 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹2,850</span>
-                                </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
+                            <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                                <i class="fa-solid fa-screwdriver-wrench text-brand-tealLight mr-1"></i>
+                                <span>Free Machine Spooling</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Daiwa Crossfire X 2.4m Spinning Rod', '₹2,850')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 3: Rapala X-Rap Saltwater Popper -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="lures" data-name="Rapala X-Rap Saltwater Popper 12cm 43g">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/popper.jpg" alt="Rapala X-Rap Popper" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">RAPALA</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Topwater Popper</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Rapala X-Rap Saltwater Popper 12cm (43g)
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Length:</strong> 120mm</div>
-                                <div><strong>Weight:</strong> 43g</div>
-                                <div><strong>Hooks:</strong> 3X VMC Trebles</div>
-                                <div><strong>Action:</strong> Loud Splash / Pop</div>
+                            <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                                <i class="fa-solid fa-water text-brand-tealLight mr-1"></i>
+                                <span>Vembanad & Sea Tackle</span>
                             </div>
-                            <div class="pt-1 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹980</span>
-                                </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Rapala X-Rap Saltwater Popper 12cm 43g', '₹980')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 4: Berkley FireLine Braid -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="lines" data-name="Berkley 8X Super Braid 300m 30LB">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/braid.jpg" alt="Berkley Super Braid" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">BERKLEY</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Braided Fishing Line</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Berkley 8X Super Braid Line 300m Spool (30LB / 0.20mm)
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Weave:</strong> 8-Carrier PE</div>
-                                <div><strong>Strength:</strong> 30LB (13.6kg)</div>
-                                <div><strong>Length:</strong> 300 Meters</div>
-                                <div><strong>Color:</strong> High-Vis Chartreuse</div>
-                            </div>
-                            <div class="pt-1 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹1,450</span>
-                                </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Berkley 8X Super Braid Line 300m 30LB', '₹1,450')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 5: Penn Pursuit IV Saltwater Reel -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="reels" data-name="Penn Pursuit IV 5000 Saltwater Spinning Reel">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/reel.jpg" alt="Penn Pursuit IV Reel" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">PENN</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Heavy Saltwater Reel</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Penn Pursuit IV 5000 Saltwater Spinning Reel
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Max Drag:</strong> 11.3 kg HT-100</div>
-                                <div><strong>Bearings:</strong> 4+1 Shielded</div>
-                                <div><strong>Ratio:</strong> 5.6:1</div>
-                                <div><strong>Body:</strong> Marine Graphite</div>
-                            </div>
-                            <div class="pt-1 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹5,200</span>
-                                </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Penn Pursuit IV 5000 Saltwater Reel', '₹5,200')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 6: Mustad Treble Hooks & Swivels Kit -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="terminal" data-name="Mustad UltraPoint 3X Heavy Treble Hooks (Pack of 10)">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/popper.jpg" alt="Mustad Hooks" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">MUSTAD</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Terminal Hooks</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Mustad UltraPoint 3X Saltwater Treble Hooks #1/0 (10 Pcs)
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Size:</strong> #1/0 Treble</div>
-                                <div><strong>Wire:</strong> 3X Strong</div>
-                                <div><strong>Quantity:</strong> 10 Pcs Box</div>
-                                <div><strong>Coating:</strong> Titan Steel</div>
-                            </div>
-                            <div class="pt-1 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹420</span>
-                                </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Mustad UltraPoint 3X Treble Hooks 10 Pcs', '₹420')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 7: Slow Pitch Jig 60g -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="lures" data-name="Deep Sea Slow Pitch Flutter Jig 60g Luminous">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/popper.jpg" alt="Slow Pitch Jig" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">PRO JIG</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Metal Vertical Jig</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Deep Sea Slow Pitch Flutter Jig 60g (Glow-in-Dark)
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Weight:</strong> 60g</div>
-                                <div><strong>Pattern:</strong> Luminous Zebra</div>
-                                <div><strong>Rig:</strong> Twin Assist Hooks</div>
-                                <div><strong>Target:</strong> GT / Coral Fish</div>
-                            </div>
-                            <div class="pt-1 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹480</span>
-                                </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Deep Sea Slow Pitch Flutter Jig 60g', '₹480')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 8: Waterproof Tackle Organizer Box -->
-                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="accessories" data-name="Heavy Duty Waterproof Double-Sided Lure Utility Box">
-                    <div>
-                        <div class="relative bg-white h-52 p-3 flex items-center justify-center border-b border-slate-100">
-                            <img src="assets/braid.jpg" alt="Tackle Box" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
-                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">STORAGE</span>
-                            <span class="absolute top-2.5 right-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded">● In Stock</span>
-                        </div>
-                        <div class="p-4 space-y-2">
-                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Tackle Storage</span>
-                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
-                                Waterproof Double-Sided Lure Utility Box (14 Slots)
-                            </h3>
-                            <div class="grid grid-cols-2 gap-1 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-100 my-1">
-                                <div><strong>Slots:</strong> 14 Compartments</div>
-                                <div><strong>Seal:</strong> Silicone O-Ring</div>
-                                <div><strong>Lid:</strong> UV Smoke Poly</div>
-                                <div><strong>Drainage:</strong> Wash Slots</div>
-                            </div>
-                            <div class="pt-1 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-medium">Store Price</span>
-                                    <span class="font-heading font-black text-lg text-slate-900">₹590</span>
-                                </div>
-                                <span class="text-[10px] text-slate-400">Incl. of GST</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Waterproof Double-Sided Lure Box', '₹590')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>Enquire on WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- No Results message -->
-            <div id="noResults" class="hidden text-center py-12">
-                <i class="fa-solid fa-magnifying-glass text-3xl text-slate-300 mb-2"></i>
-                <p class="text-sm font-semibold text-slate-600">No matching gear found</p>
-                <p class="text-xs text-slate-400 mt-1">Please ping us on WhatsApp to check availability of custom gear or models.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Why Buy from Fishing Point (Clean retail info cards) -->
-    <section class="py-12 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <h2 class="font-heading font-extrabold text-2xl text-brand-navy uppercase">
-                    Why Anglers Choose Fishing Point
-                </h2>
-                <p class="text-xs text-slate-500 mt-1">
-                    Authentic gear, honest angler advice, and direct distributor backing.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-                    <div class="w-12 h-12 rounded-lg bg-brand-navy text-white flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-certificate"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-base text-brand-navy">100% Genuine Authorized Products</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        We don't sell cheap knockoffs. Every reel, rod, and spool of line is sourced directly through official manufacturer channels.
-                    </p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-                    <div class="w-12 h-12 rounded-lg bg-brand-orange text-white flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-compass"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-base text-brand-navy">Local Backwater & Sea Know-How</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Whether you are targeting Barramundi (Kalanji), Giant Trevally (Vatta), or Mangrove Jack (Chempalli), we help you select the exact winning tackle combination.
-                    </p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-                    <div class="w-12 h-12 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-base text-brand-navy">Free Spooling & Rigging Service</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Walk into our Kochi shop with your reel. We will spool your braid under tension, tie FG or PR knots for your leader, and inspect your drag system for free.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Instagram Angler Community Banner -->
-    <section class="py-10 bg-gradient-to-r from-brand-navy via-slate-900 to-brand-navy text-white border-y border-brand-dark relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
-                <div class="space-y-2 text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 text-pink-400 text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-brands fa-instagram text-base"></i> 13K+ Anglers Follow Us
-                    </div>
-                    <h3 class="font-heading font-extrabold text-2xl sm:text-3xl uppercase">
-                        Join Our Angling Community on Instagram
-                    </h3>
-                    <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
-                        Daily monster catches, backwater lure action videos from Vembanad & Kuttanad, and instant alerts when new Shimano, Daiwa & Rapala stock arrives at our Alappuzha shop.
-                    </p>
-                </div>
-                <div class="flex-shrink-0">
-                    <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-pink-600 via-rose-500 to-amber-500 hover:opacity-90 text-white font-bold text-sm flex items-center gap-2.5 shadow-lg shadow-pink-600/30 transition-all transform hover:-translate-y-0.5">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                        <span>Follow @fishing_point_oru_choondakkada</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Store Location & Contact Details -->
-    <section id="store-location" class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                <div class="lg:col-span-6 space-y-5">
-                    <span class="text-brand-orange font-bold text-xs uppercase tracking-wider">Walk-In Store</span>
-                    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy uppercase">
-                        Visit Our Tackle Shop in Alappuzha
-                    </h2>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Stop by before your next backwater or sea angling trip. Hand-inspect carbon rods, test reel drag smoothness, and get expert bait & lure advice directly from Pappan.
-                    </p>
-
-                    <div class="space-y-3 text-xs text-slate-700">
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-brand-orange text-sm mt-0.5"></i>
-                            <div>
-                                <strong class="text-brand-navy block">Shop Address:</strong>
-                                Fishing Point (ഒരു ചൂണ്ടക്കട), Near Iron Bridge (Irumbupalam), Chakkara Kadavu Road, Alappuzha, Kerala - 688001
+                            <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                                <i class="fa-solid fa-truck-fast text-brand-tealLight mr-1"></i>
+                                <span>Courier Across Kerala</span>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-clock text-brand-orange text-sm mt-0.5"></i>
-                            <div>
-                                <strong class="text-brand-navy block">Store Hours:</strong>
-                                Monday – Sunday: 7:00 AM – 9:00 PM (Open 7 Days a week)
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <i class="fa-brands fa-whatsapp text-emerald-600 text-base mt-0.5"></i>
-                            <div>
-                                <strong class="text-brand-navy block">Phone & WhatsApp Direct:</strong>
-                                <a href="tel:+919567330366" class="hover:underline font-semibold">+91 95673 30366</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-2 flex flex-wrap gap-3">
-                        <a href="https://wa.me/919567330366?text=Hi%20Pappan,%20I%20am%20looking%20for%20directions%20or%20gear%20inquiry%20at%20Fishing%20Point%20Alappuzha." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-sm transition-colors">
-                            <i class="fa-brands fa-whatsapp text-base"></i>
-                            <span>Chat with Pappan on WhatsApp</span>
-                        </a>
-                        <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors">
-                            <i class="fa-brands fa-instagram text-pink-600 text-sm"></i>
-                            <span>View Instagram Profile</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-6">
-                    <!-- Clean Local Google Maps Styled Container -->
-                    <div class="bg-slate-100 rounded-xl border border-slate-200 overflow-hidden shadow-sm h-72 relative flex items-center justify-center text-center p-6">
-                        <div class="space-y-2">
-                            <div class="w-12 h-12 rounded-full bg-brand-navy text-brand-orange flex items-center justify-center mx-auto text-xl shadow-md">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                            </div>
-                            <h4 class="font-heading font-bold text-sm text-brand-navy">Fishing Point (ഒരു ചൂണ്ടക്കട) - Alappuzha</h4>
-                            <p class="text-xs text-slate-500 max-w-xs mx-auto">Near Iron Bridge, Chakkara Kadavu, Alappuzha, Kerala. Easily accessible with vehicle parking available.</p>
-                            <a href="https://maps.google.com/?q=Fishing+Point+Oru+Choonda+Kada+Alappuzha" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-brand-blue font-bold hover:underline pt-2">
-                                Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        <div class="pt-1">
+                            <a href="https://wa.me/919567330366?text=Hello%20Pappan,%20I%20want%20to%20enquire%20about%20tackle%20stock." target="_blank" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-brand-teal to-teal-500 hover:from-brand-tealDark hover:to-teal-600 text-brand-deepOcean font-bold text-xs uppercase tracking-wide flex items-center justify-center gap-2 transition-all shadow-md">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Direct WhatsApp Stock Inquiry</span>
                             </a>
                         </div>
                     </div>
@@ -773,64 +227,565 @@
         </div>
     </section>
 
-    <!-- Clean Retail Footer -->
-    <footer class="bg-brand-navy text-slate-300 py-10 text-xs border-t border-brand-dark">
+    <!-- Authorized Brands Carousel Bar -->
+    <div class="bg-white border-b border-slate-200 py-3 sm:py-4 px-4 overflow-x-auto scrollbar-none">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-6 min-w-max sm:min-w-0">
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">
+                Authorized Dealer:
+            </span>
+            <div class="flex items-center gap-6 sm:gap-10 text-slate-600 font-heading font-black text-sm sm:text-base tracking-wider">
+                <span class="hover:text-brand-teal transition-colors">SHIMANO</span>
+                <span class="hover:text-brand-teal transition-colors">DAIWA</span>
+                <span class="hover:text-brand-teal transition-colors">RAPALA</span>
+                <span class="hover:text-brand-teal transition-colors">MUSTAD</span>
+                <span class="hover:text-brand-teal transition-colors">PENN</span>
+                <span class="hover:text-brand-teal transition-colors">BERKLEY</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Catalog Header & Smooth Category Pills -->
+    <section id="tackleCatalog" class="pt-6 sm:pt-10 pb-12 sm:pb-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            
+            <!-- Section Title & Mobile Search Bar -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4 sm:mb-6">
+                <div>
+                    <div class="flex items-center gap-1.5 text-brand-tealDark text-[11px] font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-certificate"></i> Verified In-Store Tackle
+                    </div>
+                    <h2 class="font-heading font-black text-xl sm:text-2xl text-brand-navy uppercase mt-0.5">
+                        TACKLE & ACCESSORIES INVENTORY
+                    </h2>
+                    <p class="text-xs text-slate-500 mt-0.5">
+                        Available at our Alappuzha shop. Direct 1-tap WhatsApp booking with Pappan.
+                    </p>
+                </div>
+
+                <!-- Live Search Bar on Desktop & Mobile -->
+                <div class="w-full sm:w-72">
+                    <div class="relative">
+                        <input type="text" id="gearSearch" placeholder="Search reels, rods, poppers..." class="w-full bg-white border border-slate-300 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition-all">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swipeable Category Pills Bar (App Style for Mobile) -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-none text-xs font-semibold select-none mb-4">
+                <button onclick="filterCategory('all')" class="cat-filter-btn active-filter px-4 py-2 rounded-xl border border-slate-300 bg-brand-navy text-white whitespace-nowrap transition-all shadow-xs" data-cat="all">
+                    All Gear
+                </button>
+                <button onclick="filterCategory('rods')" class="cat-filter-btn px-4 py-2 rounded-xl border border-slate-300 bg-white text-slate-700 hover:border-brand-teal whitespace-nowrap transition-all" data-cat="rods">
+                    Fishing Rods
+                </button>
+                <button onclick="filterCategory('reels')" class="cat-filter-btn px-4 py-2 rounded-xl border border-slate-300 bg-white text-slate-700 hover:border-brand-teal whitespace-nowrap transition-all" data-cat="reels">
+                    Spinning Reels
+                </button>
+                <button onclick="filterCategory('lures')" class="cat-filter-btn px-4 py-2 rounded-xl border border-slate-300 bg-white text-slate-700 hover:border-brand-teal whitespace-nowrap transition-all" data-cat="lures">
+                    Lures & Poppers
+                </button>
+                <button onclick="filterCategory('lines')" class="cat-filter-btn px-4 py-2 rounded-xl border border-slate-300 bg-white text-slate-700 hover:border-brand-teal whitespace-nowrap transition-all" data-cat="lines">
+                    Braided Lines
+                </button>
+                <button onclick="filterCategory('terminal')" class="cat-filter-btn px-4 py-2 rounded-xl border border-slate-300 bg-white text-slate-700 hover:border-brand-teal whitespace-nowrap transition-all" data-cat="terminal">
+                    Hooks & Terminal
+                </button>
+                <button onclick="filterCategory('accessories')" class="cat-filter-btn px-4 py-2 rounded-xl border border-slate-300 bg-white text-slate-700 hover:border-brand-teal whitespace-nowrap transition-all" data-cat="accessories">
+                    Tackle Boxes
+                </button>
+            </div>
+
+            <!-- Structured 2-Column Mobile Grid, 4-Column Desktop Grid -->
+            <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+                
+                <!-- Product 1: Shimano Sienna Reel -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="reels" data-name="Shimano Sienna 4000 FG Spinning Reel">
+                    <div>
+                        <!-- Studio White Background Image -->
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/reel.jpg" alt="Shimano Sienna 4000 FG" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">SHIMANO</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">Saltwater Reel</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Shimano Sienna 4000 FG Spinning Reel
+                            </h3>
+                            
+                            <!-- Concise Spec Pills -->
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Drag:</strong> 8.5kg</div>
+                                <div><strong>BB:</strong> 3+1</div>
+                                <div><strong>Ratio:</strong> 5.2:1</div>
+                                <div><strong>Spool:</strong> 4000</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹3,450</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Shimano Sienna 4000 FG Spinning Reel', '₹3,450')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Daiwa Crossfire Rod -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="rods" data-name="Daiwa Crossfire X 2.4m Carbon Spinning Rod">
+                    <div>
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/rod.jpg" alt="Daiwa Crossfire Rod" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">DAIWA</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">Carbon Rod</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Daiwa Crossfire X 2.4m Spinning Rod
+                            </h3>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Length:</strong> 2.4m (8ft)</div>
+                                <div><strong>Pieces:</strong> 2-Sec</div>
+                                <div><strong>Lure:</strong> 14-40g</div>
+                                <div><strong>Action:</strong> Med-Hvy</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹2,850</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Daiwa Crossfire X 2.4m Spinning Rod', '₹2,850')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Rapala X-Rap Saltwater Popper -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="lures" data-name="Rapala X-Rap Saltwater Popper 12cm 43g">
+                    <div>
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/popper.jpg" alt="Rapala X-Rap Popper" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">RAPALA</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">Topwater Popper</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Rapala X-Rap Saltwater Popper 12cm
+                            </h3>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Length:</strong> 120mm</div>
+                                <div><strong>Weight:</strong> 43g</div>
+                                <div><strong>Hooks:</strong> 3X VMC</div>
+                                <div><strong>Target:</strong> GT / Barra</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹980</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Rapala X-Rap Saltwater Popper 12cm 43g', '₹980')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Berkley 8X Super Braid -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="lines" data-name="Berkley 8X Super Braid 300m 30LB">
+                    <div>
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/braid.jpg" alt="Berkley Super Braid" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">BERKLEY</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">8X PE Braid</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Berkley 8X Super Braid Line 300m
+                            </h3>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Length:</strong> 300m</div>
+                                <div><strong>Strength:</strong> 30LB</div>
+                                <div><strong>Strands:</strong> 8-Weave</div>
+                                <div><strong>Zero:</strong> Stretch</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹1,450</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Berkley 8X Super Braid Line 300m 30LB', '₹1,450')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Penn Pursuit IV Reel -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="reels" data-name="Penn Pursuit IV 5000 Saltwater Spinning Reel">
+                    <div>
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/reel.jpg" alt="Penn Pursuit IV Reel" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">PENN</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">Heavy Saltwater</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Penn Pursuit IV 5000 Saltwater Reel
+                            </h3>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Drag:</strong> 11.3kg</div>
+                                <div><strong>BB:</strong> 4+1 Shield</div>
+                                <div><strong>Ratio:</strong> 5.6:1</div>
+                                <div><strong>HT-100:</strong> Carbon</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹5,200</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Penn Pursuit IV 5000 Saltwater Reel', '₹5,200')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Mustad Treble Hooks -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="terminal" data-name="Mustad UltraPoint 3X Heavy Treble Hooks (Pack of 10)">
+                    <div>
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/popper.jpg" alt="Mustad Hooks" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">MUSTAD</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">Terminal Trebles</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Mustad UltraPoint 3X Heavy Trebles
+                            </h3>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Wire:</strong> 3X Strong</div>
+                                <div><strong>Size:</strong> #1/0</div>
+                                <div><strong>Pack:</strong> 10 Pcs</div>
+                                <div><strong>Coat:</strong> Anti-Rust</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹420</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Mustad UltraPoint 3X Treble Hooks 10 Pcs', '₹420')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7: Slow Pitch Jig 60g -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="lures" data-name="Deep Sea Slow Pitch Flutter Jig 60g Luminous">
+                    <div>
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/popper.jpg" alt="Slow Pitch Jig" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">PRO JIG</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">Metal Flutter Jig</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Deep Sea Slow Pitch Flutter Jig 60g
+                            </h3>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Weight:</strong> 60g</div>
+                                <div><strong>Glow:</strong> Zebra</div>
+                                <div><strong>Hooks:</strong> Twin Assist</div>
+                                <div><strong>Target:</strong> Sea Jigging</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹480</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Deep Sea Slow Pitch Flutter Jig 60g', '₹480')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8: Waterproof Tackle Box -->
+                <div class="product-item bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden hover:border-brand-teal/80 transition-all duration-200 hover:shadow-lg flex flex-col justify-between" data-category="accessories" data-name="Heavy Duty Waterproof Double-Sided Lure Utility Box">
+                    <div>
+                        <div class="relative bg-white aspect-square p-2 sm:p-3 flex items-center justify-center border-b border-slate-100">
+                            <img src="assets/braid.jpg" alt="Tackle Box" loading="lazy" decoding="async" width="220" height="220" class="w-full h-full object-contain">
+                            <span class="absolute top-2 left-2 bg-brand-navy text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">STORAGE</span>
+                            <span class="absolute top-2 right-2 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded">● Stock</span>
+                        </div>
+                        
+                        <div class="p-2.5 sm:p-4 space-y-1.5 sm:space-y-2">
+                            <span class="text-[9px] sm:text-[11px] font-bold text-brand-tealDark uppercase tracking-wider block truncate">Tackle Storage</span>
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                                Waterproof Lure Box (14 Slots)
+                            </h3>
+                            
+                            <div class="grid grid-cols-2 gap-1 text-[9px] sm:text-[11px] text-slate-600 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
+                                <div><strong>Slots:</strong> 14 Double</div>
+                                <div><strong>Seal:</strong> Silicone O</div>
+                                <div><strong>Lock:</strong> Dual Clip</div>
+                                <div><strong>Anti:</strong> Rust Drain</div>
+                            </div>
+                            
+                            <div class="pt-0.5 flex items-baseline justify-between">
+                                <div>
+                                    <span class="text-[9px] text-slate-400 uppercase block font-medium">Price</span>
+                                    <span class="font-heading font-black text-sm sm:text-base text-slate-900">₹590</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">GST Incl.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2.5 sm:p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Waterproof Double-Sided Lure Box', '₹590')" class="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Enquire WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="noResults" class="hidden text-center py-12">
+                <i class="fa-solid fa-fish-fins text-3xl text-slate-300 mb-2"></i>
+                <p class="text-xs sm:text-sm font-semibold text-slate-700">No matching gear found</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Please WhatsApp Pappan directly to check specific items.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Instagram Angler Community Banner: Direct Mobile App Callout -->
+    <section class="py-8 bg-gradient-to-r from-brand-deepOcean via-brand-navy to-slate-900 text-white border-y border-brand-teal/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-700/60">
+            <div class="bg-gradient-to-br from-white/10 to-white/5 border border-white/15 rounded-2xl p-5 sm:p-7 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+                <div class="space-y-1.5">
+                    <div class="inline-flex items-center gap-1.5 text-pink-400 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-brands fa-instagram text-base"></i> Official Instagram Community
+                    </div>
+                    <h3 class="font-heading font-black text-lg sm:text-2xl uppercase">
+                        Join 13,000+ Anglers in Alappuzha
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+                        Catch videos, Vembanad backwater lure tests, Sabiki tips, and new arrival alerts.
+                    </p>
+                </div>
+                <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-pink-600 via-rose-500 to-amber-500 hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>Follow @fishing_point_oru_choondakkada</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Physical Store Location: Clean Alappuzha Outlet Details -->
+    <section id="store-location" class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="inline-flex items-center gap-1.5 text-brand-tealDark text-[11px] font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-shop"></i> Walk-in Store
+                    </div>
+                    
+                    <h2 class="font-heading font-black text-xl sm:text-3xl text-brand-navy uppercase">
+                        VISIT FISHING POINT IN ALAPPUZHA
+                    </h2>
+                    
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Drop in before your morning backwater or sea angling trip. Hand-inspect carbon rods, test reel drag smoothness, and get expert live-bait tips directly from Pappan.
+                    </p>
+
+                    <div class="space-y-2.5 text-xs text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-brand-teal text-sm mt-0.5"></i>
+                            <div>
+                                <strong class="text-slate-900 block">Address:</strong>
+                                Fishing Point (ഒരു ചൂണ്ടക്കട), Near Iron Bridge (Irumbupalam), Chakkara Kadavu Road, Alappuzha, Kerala - 688001
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-clock text-brand-teal text-sm mt-0.5"></i>
+                            <div>
+                                <strong class="text-slate-900 block">Shop Hours:</strong>
+                                Monday – Sunday: 7:00 AM – 9:00 PM (Open 7 Days a week)
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-emerald-600 text-sm mt-0.5"></i>
+                            <div>
+                                <strong class="text-slate-900 block">Direct Contact:</strong>
+                                <a href="tel:+919567330366" class="hover:underline font-bold text-slate-800">+91 95673 30366</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2.5 pt-1">
+                        <a href="https://wa.me/919567330366?text=Hi%20Pappan,%20I%20am%20looking%20for%20directions%20or%20gear%20inquiry%20at%20Fishing%20Point%20Alappuzha." target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Chat with Pappan</span>
+                        </a>
+                        <a href="https://maps.google.com/?q=Fishing+Point+Oru+Choonda+Kada+Alappuzha" target="_blank" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-arrow text-brand-teal text-xs"></i>
+                            <span>Google Maps Location</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-gradient-to-br from-brand-ice to-slate-100 rounded-2xl border border-brand-teal/20 overflow-hidden shadow-xs p-6 text-center space-y-3">
+                        <div class="w-14 h-14 rounded-2xl bg-white text-brand-teal flex items-center justify-center mx-auto text-2xl shadow-sm border border-brand-teal/20">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h4 class="font-heading font-black text-base text-brand-navy uppercase">
+                            Fishing Point — ഒരു ചൂണ്ടക്കട
+                        </h4>
+                        <p class="text-xs text-slate-500 max-w-xs mx-auto">
+                            Irumbupalam (Iron Bridge) area, Alappuzha. Heart of Kerala's angling backwaters.
+                        </p>
+                        <a href="https://maps.google.com/?q=Fishing+Point+Oru+Choonda+Kada+Alappuzha" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-navy text-white text-xs font-bold hover:bg-brand-teal hover:text-brand-deepOcean transition-all shadow-xs">
+                            Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="bg-brand-deepOcean text-slate-300 py-10 text-xs border-t border-brand-teal/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
                 
                 <div class="md:col-span-2 space-y-3">
                     <div class="flex items-center gap-3">
-                        <img src="assets/logo-full.png" alt="Fishing Point Logo" class="h-14 w-auto object-contain bg-white/10 p-1 rounded-lg">
+                        <img src="assets/logo-full.png" alt="Fishing Point Logo" class="h-14 w-auto object-contain bg-white/5 p-1 rounded-lg border border-white/10">
                         <div>
-                            <span class="font-heading font-bold text-lg text-white uppercase tracking-tight block leading-none">
-                                FISHING <span class="text-brand-orange">POINT</span>
+                            <span class="font-heading font-black text-lg text-white uppercase tracking-tight block leading-none">
+                                FISHING <span class="text-brand-teal">POINT</span>
                             </span>
-                            <span class="text-[11px] text-brand-blue font-semibold block mt-1">ഒരു ചൂണ്ടക്കട • Alappuzha</span>
+                            <span class="text-xs text-brand-teal font-bold block mt-1 font-mal">ഒരു ചൂണ്ടക്കട • Alappuzha</span>
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs max-w-sm leading-relaxed">
                         Alappuzha's premier destination for genuine saltwater and backwater fishing tackle, high-drag reels, tournament braided lines, and pro angler guidance.
                     </p>
-                    <div class="pt-2">
-                        <a href="https://www.instagram.com/fishing_point_oru_choondakkada/" target="_blank" class="inline-flex items-center gap-2 text-xs text-pink-400 hover:text-pink-300">
-                            <i class="fa-brands fa-instagram text-sm"></i> @fishing_point_oru_choondakkada (13K Angler Family)
-                        </a>
-                    </div>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Tackle Categories</h4>
-                    <ul class="space-y-1.5 text-slate-400">
-                        <li><button onclick="filterCategory('rods')" class="hover:text-white">Fishing Rods</button></li>
-                        <li><button onclick="filterCategory('reels')" class="hover:text-white">Spinning & Casting Reels</button></li>
-                        <li><button onclick="filterCategory('lures')" class="hover:text-white">Lures, Poppers & Jigs</button></li>
-                        <li><button onclick="filterCategory('lines')" class="hover:text-white">Braided Lines & Leaders</button></li>
-                        <li><button onclick="filterCategory('accessories')" class="hover:text-white">Tackle Boxes & Accessories</button></li>
+                    <h4 class="font-heading font-bold text-white uppercase text-xs tracking-wider mb-2.5">Tackle Categories</h4>
+                    <ul class="space-y-1 text-slate-400">
+                        <li><button onclick="filterCategory('rods')" class="hover:text-brand-teal">Fishing Rods</button></li>
+                        <li><button onclick="filterCategory('reels')" class="hover:text-brand-teal">Spinning Reels</button></li>
+                        <li><button onclick="filterCategory('lures')" class="hover:text-brand-teal">Lures & Poppers</button></li>
+                        <li><button onclick="filterCategory('lines')" class="hover:text-brand-teal">8X Braided Lines</button></li>
+                        <li><button onclick="filterCategory('terminal')" class="hover:text-brand-teal">Terminal Hooks</button></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Customer Support</h4>
-                    <p class="text-slate-400 leading-relaxed mb-2">
-                        Harbour Junction, Kochi, Kerala<br>
-                        WhatsApp / Phone: +91 95673 30366<br>
-                        Direct Courier Delivery Across India
+                    <h4 class="font-heading font-bold text-white uppercase text-xs tracking-wider mb-2.5">Contact Outlet</h4>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Near Iron Bridge, Alappuzha, Kerala<br>
+                        Phone: +91 95673 30366<br>
+                        Instagram: @fishing_point_oru_choondakkada
                     </p>
                 </div>
 
             </div>
 
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500">
-                <p>© 2026 Fishing Point Tackle Shop. All rights reserved.</p>
-                <p>Authorized Dealer for Premium Angling Equipment</p>
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-[11px]">
+                <p>© 2026 Fishing Point (ഒരു ചൂണ്ടക്കട). All rights reserved.</p>
+                <p>Designed with pride for Kerala's Anglers</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Sticky WhatsApp Button with Bouncing Icon -->
-    <a href="https://wa.me/919567330366?text=Hi%20Fishing%20Point,%20I%20have%20an%20inquiry%20regarding%20fishing%20gear." target="_blank" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp text-2xl animate-bounce"></i>
-        <span class="hidden sm:inline font-sans">Chat on WhatsApp</span>
+    <!-- Floating Sticky WhatsApp Action Button: Smooth, App-Grade -->
+    <a href="https://wa.me/919567330366?text=Hi%20Pappan,%20I%20have%20an%20inquiry%20regarding%20fishing%20gear." target="_blank" class="fixed bottom-4 right-4 z-50 flex items-center gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105 active:scale-95" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-xl sm:text-2xl animate-bounce"></i>
+        <span class="font-sans">Order via WhatsApp</span>
     </a>
 
     <!-- Custom Script -->
