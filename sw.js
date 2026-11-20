@@ -1,13 +1,13 @@
 // ==========================================================================
-// Fishing Point - Service Worker v3 (Cache Invalidation & Fresh Delivery)
+// Fishing Point - Service Worker v4 (Cache Invalidation & Fresh Delivery)
 // ==========================================================================
 
-const CACHE_NAME = 'fishing-point-v3';
+const CACHE_NAME = 'fishing-point-v4';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
-    './styles.css',
-    './script.js',
+    './styles.css?v=4.0',
+    './script.js?v=4.0',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
 ];
 
@@ -36,7 +36,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     if (event.request.method !== 'GET') return;
 
-    // Network-first for HTML, JS and CSS to ensure updates land immediately
+    // Network-first for local assets so updates land immediately
     const url = new URL(event.request.url);
     if (url.origin === location.origin) {
         event.respondWith(

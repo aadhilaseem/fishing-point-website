@@ -1,6 +1,6 @@
 // ==========================================================================
-// Fishing Point - High-Performance E-Commerce Interactivity
-// Clean, Fast, Robust Brand & Category Filtering
+// Fishing Point - High-Performance E-Commerce Interactivity v4.0
+// Zero Latency, Scroll Reveal Animations, Robust Filtering
 // ==========================================================================
 
 const STORE_WHATSAPP_NUMBER = "919567330366";
@@ -10,10 +10,11 @@ let activeBrand = 'All';
 
 document.addEventListener('DOMContentLoaded', () => {
     initSearch();
+    initScrollReveal();
     registerServiceWorker();
 });
 
-// 1. Service Worker for Offline Speed
+// 1. Service Worker Registration
 function registerServiceWorker() {
     if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
         window.addEventListener('load', () => {
@@ -22,7 +23,29 @@ function registerServiceWorker() {
     }
 }
 
-// 2. Category Filter
+// 2. High-Performance Scroll Reveal
+function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// 3. Category Filter
 function filterByCategory(category) {
     activeCategory = category;
     
@@ -30,16 +53,16 @@ function filterByCategory(category) {
     const tabs = document.querySelectorAll('.cat-tab');
     tabs.forEach(tab => {
         if (tab.getAttribute('data-cat') === category) {
-            tab.className = "cat-tab active-cat-tab px-3.5 py-1.5 rounded-xl border border-slate-900 bg-slate-900 text-white font-bold whitespace-nowrap shadow-xs";
+            tab.className = "cat-tab active-cat-tab px-3 py-1.5 rounded-xl border border-slate-900 bg-slate-900 text-white font-bold whitespace-nowrap shadow-xs";
         } else {
-            tab.className = "cat-tab px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 whitespace-nowrap";
+            tab.className = "cat-tab px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 whitespace-nowrap";
         }
     });
 
     applyFilters();
 }
 
-// 3. Brand Filter
+// 4. Brand Filter
 function filterByBrand(brand) {
     activeBrand = brand;
     
@@ -55,14 +78,14 @@ function filterByBrand(brand) {
 
     applyFilters();
 
-    // If triggered from Shop by Brand section, smoothly scroll down to the catalog
+    // Smooth scroll to catalog when selected from brand section
     const catalogEl = document.getElementById('tackleCatalog');
-    if (catalogEl && window.scrollY < catalogEl.offsetTop - 100) {
+    if (catalogEl && window.scrollY < catalogEl.offsetTop - 120) {
         catalogEl.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
-// 4. Reset All Filters
+// 5. Reset All Filters
 function resetAllFilters() {
     activeCategory = 'All';
     activeBrand = 'All';
@@ -76,7 +99,7 @@ function resetAllFilters() {
     filterByBrand('All');
 }
 
-// 5. Unified Filter Application
+// 6. Unified Filter Application
 function applyFilters() {
     const searchDesk = document.getElementById('gearSearch');
     const searchMob = document.getElementById('gearSearchMobile');
@@ -99,6 +122,7 @@ function applyFilters() {
 
         if (matchBrand && matchCat && matchQuery) {
             item.classList.remove('hidden');
+            item.classList.add('visible');
             visibleCount++;
         } else {
             item.classList.add('hidden');
@@ -129,7 +153,7 @@ function applyFilters() {
     }
 }
 
-// 6. Synchronized Live Search
+// 7. Synchronized Live Search
 function initSearch() {
     const searchDesk = document.getElementById('gearSearch');
     const searchMob = document.getElementById('gearSearchMobile');
@@ -149,15 +173,21 @@ function initSearch() {
 
             debounceTimer = setTimeout(() => {
                 applyFilters();
-            }, 60);
+            }, 50);
         });
     });
 }
 
-// 7. WhatsApp Order Builder
+// 8. WhatsApp Order Builder
 function orderViaWhatsApp(productName, price) {
     const text = `Hello Fishing Point Alappuzha,\n\nI want to order/enquire about this tackle:\n*Product:* ${productName}\n*Price Reference:* ${price}\n\nCould you please confirm stock availability at your Iron Bridge shop (Mullakkal) and courier delivery options?`;
     const encoded = encodeURIComponent(text);
     const url = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encoded}`;
     window.open(url, '_blank');
 }
+
+// Attach directly to window for global inline accessibility
+window.filterByCategory = filterByCategory;
+window.filterByBrand = filterByBrand;
+window.resetAllFilters = resetAllFilters;
+window.orderViaWhatsApp = orderViaWhatsApp;

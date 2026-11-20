@@ -1,7 +1,7 @@
 /* ==========================================================================
    Fishing Point - Clean Retail E-Commerce Theme
-   Inspired by Tackle Tips & Cabral Outdoors
-   100% Emoji-Free, Sophisticated Slate & Crisp Neutral Architecture
+   100% Emoji-Free, Pure Professional Aesthetic
+   Hardware-Accelerated Smooth Animations & Micro-Interactions
    ========================================================================== */
 
 :root {
@@ -48,20 +48,50 @@ html, body {
     scrollbar-width: none;
 }
 
-/* Product Card Transitions */
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Subtle Hero Store Card Float */
+@keyframes floatGentleCard {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-float-card {
+    animation: floatGentleCard 4.5s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Product Card Transitions & Micro-Lift */
 .product-item {
     content-visibility: auto;
     contain-intrinsic-size: 380px;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease, opacity 0.2s ease;
+    will-change: transform;
 }
 
 .product-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    transform: translateY(-4px);
+    border-color: #94A3B8;
+    box-shadow: 0 14px 28px -6px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
 }
 
 .product-item:active {
-    transform: scale(0.99);
+    transform: scale(0.98);
 }
 
 /* Line Clamp utility */
@@ -76,4 +106,9 @@ html, body {
 input:focus {
     border-color: #0F172A !important;
     box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Active Filter Tabs & Chips Transition */
+.cat-tab, .brand-chip {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
