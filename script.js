@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearch();
     initScrollReveal();
     initKeyboardShortcuts();
+    initModalScrollProtection();
     registerServiceWorker();
 });
 
@@ -254,22 +255,34 @@ function openProductModal(productId) {
         };
     }
 
+    // Save exact scroll position and lock background
+    savedModalScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    document.documentElement.classList.add('modal-locked');
+    document.body.classList.add('modal-locked');
+
     // Open Modal with Spring Elevation & Blur Background
     if (modal) {
         modal.classList.remove('hidden');
         // Force reflow for smooth transition
         void modal.offsetWidth;
         modal.classList.add('modal-open');
-        document.body.style.overflow = 'hidden';
     }
 }
+
+let savedModalScrollY = 0;
 
 function closeProductModal() {
     const modal = document.getElementById('productModal');
     if (!modal) return;
 
     modal.classList.remove('modal-open');
-    document.body.style.overflow = '';
+
+    // Unlock background and restore exact scroll position
+    document.documentElement.classList.remove('modal-locked');
+    document.body.classList.remove('modal-locked');
+    if (typeof savedModalScrollY === 'number') {
+        window.scrollTo({ top: savedModalScrollY, behavior: 'instant' });
+    }
 
     setTimeout(() => {
         modal.classList.add('hidden');
@@ -281,6 +294,25 @@ function handleBackdropClick(event) {
     if (modalCard && !modalCard.contains(event.target)) {
         closeProductModal();
     }
+}
+
+function initModalScrollProtection() {
+    const modal = document.getElementById('productModal');
+    if (!modal) return;
+
+    // Prevent mouse wheel on backdrop from scrolling window
+    modal.addEventListener('wheel', (e) => {
+        if (e.target === modal) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Prevent mobile touch drags on backdrop from scrolling window
+    modal.addEventListener('touchmove', (e) => {
+        if (e.target === modal) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 }
 
 function initKeyboardShortcuts() {

@@ -115,10 +115,19 @@ input:focus {
 }
 
 /* ==========================================================================
-   Product Quick View Modal (Backdrop Blur & Spring Elevation)
+   Product Quick View Modal (Backdrop Blur, Spring Elevation & Strict Scroll Lock)
    ========================================================================== */
+html.modal-locked, body.modal-locked {
+    overflow: hidden !important;
+    height: 100% !important;
+    overscroll-behavior: none !important;
+    touch-action: none !important;
+}
+
 #productModal {
     transition: opacity 0.25s ease, backdrop-filter 0.25s ease;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
 }
 
 #productModal.modal-open {
@@ -136,4 +145,5 @@ input:focus {
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
     will-change: transform, opacity;
+    overscroll-behavior: contain !important;
 }

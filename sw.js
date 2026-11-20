@@ -2,12 +2,12 @@
 // Fishing Point - Service Worker v5 (Cache Invalidation & Fresh Delivery)
 // ==========================================================================
 
-const CACHE_NAME = 'fishing-point-v5.1';
+const CACHE_NAME = 'fishing-point-v5.2';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
-    './styles.css?v=5.1',
-    './script.js?v=5.1',
+    './styles.css?v=5.2',
+    './script.js?v=5.2',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
 ];
 

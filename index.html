@@ -31,7 +31,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="styles.css?v=5.1">
+    <link rel="stylesheet" href="styles.css?v=5.2">
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-20 md:pb-6">
 
@@ -1878,12 +1878,12 @@
         </a>
     </div>
 
-    <!-- PRODUCT QUICK VIEW POPUP MODAL (Compact "Cheriya Post" Card with Backdrop Blur) -->
-    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-md transition-all duration-300 opacity-0" aria-modal="true" role="dialog" onclick="handleBackdropClick(event)">
-        <div id="modalCard" class="relative w-full max-w-[340px] sm:max-w-[360px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 transition-all duration-300 flex flex-col" onclick="event.stopPropagation()">
+    <!-- PRODUCT QUICK VIEW POPUP MODAL (Compact "Cheriya Post" Card with Strict Scroll Lock) -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-md transition-all duration-300 opacity-0 overscroll-contain" aria-modal="true" role="dialog" onclick="handleBackdropClick(event)">
+        <div id="modalCard" class="relative w-full max-w-[340px] sm:max-w-[360px] max-h-[88vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 transition-all duration-300 flex flex-col overscroll-contain" onclick="event.stopPropagation()">
             
-            <!-- Compact Modal Top Bar -->
-            <div class="px-3.5 py-2.5 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+            <!-- Compact Modal Top Bar (Fixed) -->
+            <div class="px-3.5 py-2.5 border-b border-slate-100 flex items-center justify-between bg-slate-50/80 flex-shrink-0">
                 <div class="flex items-center gap-1.5">
                     <span id="modalBrandBadge" class="bg-slate-900 text-white text-[9px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">BRAND</span>
                     <span id="modalCategoryBadge" class="text-[10px] font-semibold text-slate-500 uppercase truncate max-w-[110px]">CATEGORY</span>
@@ -1897,44 +1897,47 @@
                 </button>
             </div>
 
-            <!-- Compact Product Image -->
-            <div class="relative bg-slate-50/80 border-b border-slate-100 p-2.5 flex items-center justify-center h-44 sm:h-48 overflow-hidden">
-                <img id="modalProductImg" src="" alt="Product Image" class="max-h-36 sm:max-h-40 w-auto object-contain transition-transform duration-300 hover:scale-105">
+            <!-- Scrollable Content Body (Ensures Perfect Behavior on Short/Mobile Viewports) -->
+            <div class="overflow-y-auto overscroll-contain scrollbar-none flex-1">
+                <!-- Compact Product Image -->
+                <div class="relative bg-slate-50/80 border-b border-slate-100 p-2.5 flex items-center justify-center h-44 sm:h-48 overflow-hidden">
+                    <img id="modalProductImg" src="" alt="Product Image" class="max-h-36 sm:max-h-40 w-auto object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+
+                <!-- Compact Product Details -->
+                <div class="p-3.5 sm:p-4 space-y-2">
+                    <!-- Product Name -->
+                    <h3 id="modalProductName" class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
+                        Product Name
+                    </h3>
+
+                    <!-- Price Row -->
+                    <div class="flex items-baseline justify-between pt-0.5">
+                        <div>
+                            <span class="text-[9px] text-slate-400 uppercase tracking-wide block">Price (GST Incl.)</span>
+                            <span id="modalProductPrice" class="font-heading font-black text-base sm:text-lg text-slate-900">₹0.00</span>
+                        </div>
+                        <span class="text-[10px] text-emerald-700 bg-emerald-50 font-semibold px-2 py-0.5 rounded border border-emerald-100">Genuine Guarantee</span>
+                    </div>
+
+                    <!-- Compact Specs Pills -->
+                    <div class="pt-1">
+                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Key Specifications:</span>
+                        <div id="modalSpecsContainer" class="flex flex-wrap gap-1">
+                            <!-- Dynamic Specs -->
+                        </div>
+                    </div>
+
+                    <!-- Store Pickup Note -->
+                    <div class="pt-1 flex items-center gap-1.5 text-[10px] text-slate-500">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i>
+                        <span>Free spooling • Iron Bridge pickup & courier</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Compact Product Details -->
-            <div class="p-3.5 sm:p-4 space-y-2">
-                <!-- Product Name -->
-                <h3 id="modalProductName" class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2">
-                    Product Name
-                </h3>
-
-                <!-- Price Row -->
-                <div class="flex items-baseline justify-between pt-0.5">
-                    <div>
-                        <span class="text-[9px] text-slate-400 uppercase tracking-wide block">Price (GST Incl.)</span>
-                        <span id="modalProductPrice" class="font-heading font-black text-base sm:text-lg text-slate-900">₹0.00</span>
-                    </div>
-                    <span class="text-[10px] text-emerald-700 bg-emerald-50 font-semibold px-2 py-0.5 rounded border border-emerald-100">Genuine Guarantee</span>
-                </div>
-
-                <!-- Compact Specs Pills -->
-                <div class="pt-1">
-                    <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Key Specifications:</span>
-                    <div id="modalSpecsContainer" class="flex flex-wrap gap-1">
-                        <!-- Dynamic Specs -->
-                    </div>
-                </div>
-
-                <!-- Store Pickup Note -->
-                <div class="pt-1 flex items-center gap-1.5 text-[10px] text-slate-500">
-                    <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i>
-                    <span>Free spooling • Iron Bridge pickup & courier</span>
-                </div>
-            </div>
-
-            <!-- Action Button -->
-            <div class="p-3 sm:p-4 pt-0">
+            <!-- Action Button (Fixed Bottom) -->
+            <div class="p-3 sm:p-4 pt-2 border-t border-slate-100 bg-white flex-shrink-0">
                 <button id="modalWhatsAppBtn" class="w-full py-2.5 sm:py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wide flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span>Order via WhatsApp (Pappan)</span>
@@ -1950,6 +1953,6 @@
     </script>
 
     <!-- Script with Cache Buster -->
-    <script src="script.js?v=5.1"></script>
+    <script src="script.js?v=5.2"></script>
 </body>
 </html>
