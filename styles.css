@@ -11,7 +11,9 @@
     --brand-surface: #F8FAFC;
 }
 
-html {
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
