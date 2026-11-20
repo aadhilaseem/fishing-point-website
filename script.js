@@ -155,15 +155,18 @@ function applyFilters() {
     }
 }
 
-// 7. Synchronized Live Search
+// 7. Synchronized Live Search & Instant Dropdown
 function initSearch() {
     const searchDesk = document.getElementById('gearSearch');
     const searchMob = document.getElementById('gearSearchMobile');
+    const clearDesk = document.getElementById('clearSearchDesktop');
+    const clearMob = document.getElementById('clearSearchMobile');
     const inputs = [searchDesk, searchMob].filter(Boolean);
 
     let debounceTimer;
 
     inputs.forEach(input => {
+        // Live Input Event
         input.addEventListener('input', (e) => {
             clearTimeout(debounceTimer);
             const val = e.target.value;
@@ -173,11 +176,155 @@ function initSearch() {
                 if (other !== e.target) other.value = val;
             });
 
+            // Toggle clear button
+            if (clearDesk) clearDesk.classList.toggle('hidden', !val);
+            if (clearMob) clearMob.classList.toggle('hidden', !val);
+
+            // Render instant live dropdown immediately
+            renderSearchDropdown(val);
+
             debounceTimer = setTimeout(() => {
                 applyFilters();
-            }, 50);
+            }, 30);
+        });
+
+        // Keydown Handler for Enter: Auto-scroll down to results in catalog
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                input.blur();
+                closeSearchDropdown();
+                const catalogEl = document.getElementById('tackleCatalog');
+                if (catalogEl) {
+                    catalogEl.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Focus Handler
+        input.addEventListener('focus', () => {
+            if (input.value.trim().length > 0) {
+                renderSearchDropdown(input.value);
+            }
         });
     });
+
+    // Close dropdown on click outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('#searchWrapperDesktop') && !e.target.closest('#searchWrapperMobile')) {
+            closeSearchDropdown();
+        }
+    });
+}
+
+function renderSearchDropdown(rawQuery) {
+    const query = (rawQuery || '').toLowerCase().trim();
+    const dropDesk = document.getElementById('searchDropdownDesktop');
+    const dropMob = document.getElementById('searchDropdownMobile');
+    const dropdowns = [dropDesk, dropMob].filter(Boolean);
+
+    if (!query) {
+        dropdowns.forEach(d => {
+            d.innerHTML = '';
+            d.classList.add('hidden');
+        });
+        return;
+    }
+
+    const db = window.PRODUCTS_DB || [];
+    const matches = db.filter(p => {
+        const name = (p.name || '').toLowerCase();
+        const brand = (p.brand || '').toLowerCase();
+        const cat = (p.category_name || p.category || '').toLowerCase();
+        const specs = (p.specs || []).join(' ').toLowerCase();
+        return name.includes(query) || brand.includes(query) || cat.includes(query) || specs.includes(query);
+    });
+
+    let html = '';
+
+    if (matches.length > 0) {
+        const topMatches = matches.slice(0, 5);
+        html += `<div class="p-2.5 bg-slate-50 border-b border-slate-100 flex items-center justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+            <span>Found ${matches.length} matching gear</span>
+            <span class="text-emerald-700 font-extrabold">Tap to View</span>
+        </div>`;
+
+        topMatches.forEach(p => {
+            html += `
+            <div onclick="selectSearchProduct('${p.id}')" class="p-2.5 sm:p-3 hover:bg-slate-50 transition-colors flex items-center gap-3 cursor-pointer group">
+                <div class="w-10 h-10 rounded-xl bg-slate-100 p-1 flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-200">
+                    <img src="${p.img}" alt="${p.name}" class="w-full h-full object-contain group-hover:scale-105 transition-transform" onerror="this.src='assets/reel.jpg'">
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-1.5 mb-0.5">
+                        <span class="bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.2 rounded uppercase">${p.brand}</span>
+                        <span class="text-[10px] text-slate-500 uppercase truncate">${p.category_name || p.category}</span>
+                    </div>
+                    <h4 class="text-xs font-bold text-slate-900 truncate group-hover:text-emerald-700 transition-colors">${p.name}</h4>
+                    <span class="text-xs font-extrabold text-slate-900">${p.price}</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-slate-600 transition-colors"></i>
+            </div>`;
+        });
+
+        // Bottom CTA: View all results in catalog
+        html += `
+        <button onclick="jumpToCatalogWithFilter()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors">
+            <span>View All ${matches.length} Items in Catalog</span>
+            <i class="fa-solid fa-arrow-down text-[10px]"></i>
+        </button>`;
+    } else {
+        html += `
+        <div class="p-4 text-center space-y-1.5">
+            <i class="fa-solid fa-magnifying-glass text-xl text-slate-300"></i>
+            <p class="text-xs font-bold text-slate-800">No matching gear found for "${rawQuery}"</p>
+            <p class="text-[10px] text-slate-500">Need a custom tackle recommendation? Ask Pappan:</p>
+            <a href="https://wa.me/${STORE_WHATSAPP_NUMBER}?text=Hi%20Pappan,%20I%20am%20looking%20for%20fishing%20gear:%20${encodeURIComponent(rawQuery)}" target="_blank" class="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-[10px] font-bold">
+                <i class="fa-brands fa-whatsapp text-xs"></i>
+                <span>Ask Pappan on WhatsApp</span>
+            </a>
+        </div>`;
+    }
+
+    dropdowns.forEach(d => {
+        d.innerHTML = html;
+        d.classList.remove('hidden');
+    });
+}
+
+function selectSearchProduct(productId) {
+    closeSearchDropdown();
+    openProductModal(productId);
+}
+
+function jumpToCatalogWithFilter() {
+    closeSearchDropdown();
+    const catalogEl = document.getElementById('tackleCatalog');
+    if (catalogEl) {
+        catalogEl.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function closeSearchDropdown() {
+    const dropDesk = document.getElementById('searchDropdownDesktop');
+    const dropMob = document.getElementById('searchDropdownMobile');
+    if (dropDesk) dropDesk.classList.add('hidden');
+    if (dropMob) dropMob.classList.add('hidden');
+}
+
+function clearLiveSearch() {
+    const searchDesk = document.getElementById('gearSearch');
+    const searchMob = document.getElementById('gearSearchMobile');
+    const clearDesk = document.getElementById('clearSearchDesktop');
+    const clearMob = document.getElementById('clearSearchMobile');
+
+    if (searchDesk) searchDesk.value = '';
+    if (searchMob) searchMob.value = '';
+    if (clearDesk) clearDesk.classList.add('hidden');
+    if (clearMob) clearMob.classList.add('hidden');
+
+    closeSearchDropdown();
+    applyFilters();
 }
 
 // 8. WhatsApp Order Builder
@@ -331,3 +478,7 @@ window.orderViaWhatsApp = orderViaWhatsApp;
 window.openProductModal = openProductModal;
 window.closeProductModal = closeProductModal;
 window.handleBackdropClick = handleBackdropClick;
+window.clearLiveSearch = clearLiveSearch;
+window.selectSearchProduct = selectSearchProduct;
+window.jumpToCatalogWithFilter = jumpToCatalogWithFilter;
+window.closeSearchDropdown = closeSearchDropdown;
