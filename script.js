@@ -1,17 +1,19 @@
 // ==========================================================================
-// Fishing Point - Mobile-First High Performance Interactivity
+// Fishing Point - High-Performance E-Commerce Interactivity
+// Clean, Fast, Robust Brand & Category Filtering
 // ==========================================================================
 
+const STORE_WHATSAPP_NUMBER = "919567330366";
+
+let activeCategory = 'All';
+let activeBrand = 'All';
+
 document.addEventListener('DOMContentLoaded', () => {
-    initMobileMenu();
     initSearch();
     registerServiceWorker();
 });
 
-// WhatsApp Store Phone Number (Fishing Point - Pappan)
-const STORE_WHATSAPP_NUMBER = "919567330366";
-
-// --- 1. Service Worker for Instant Caching ---
+// 1. Service Worker for Offline Speed
 function registerServiceWorker() {
     if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
         window.addEventListener('load', () => {
@@ -20,107 +22,102 @@ function registerServiceWorker() {
     }
 }
 
-// --- 2. Mobile Drawer Navigation ---
-function initMobileMenu() {
-    const menuBtn = document.getElementById('mobileMenuBtn');
-    const menu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
-
-    if (!menuBtn || !menu) return;
-
-    menuBtn.addEventListener('click', () => {
-        const isHidden = menu.classList.contains('hidden');
-        if (isHidden) {
-            menu.classList.remove('hidden');
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-xmark');
+// 2. Category Filter
+function filterByCategory(category) {
+    activeCategory = category;
+    
+    // Update category tabs style
+    const tabs = document.querySelectorAll('.cat-tab');
+    tabs.forEach(tab => {
+        if (tab.getAttribute('data-cat') === category) {
+            tab.className = "cat-tab active-cat-tab px-3.5 py-1.5 rounded-xl border border-slate-900 bg-slate-900 text-white font-bold whitespace-nowrap shadow-xs";
         } else {
-            menu.classList.add('hidden');
-            menuIcon.classList.remove('fa-xmark');
-            menuIcon.classList.add('fa-bars');
+            tab.className = "cat-tab px-3.5 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 whitespace-nowrap";
         }
     });
-}
-
-function closeMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
-    if (menu) menu.classList.add('hidden');
-    if (menuIcon) {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-    }
-}
-
-// --- 3. Instant Product Category Filtering ---
-let currentCategory = 'all';
-
-function filterCategory(category) {
-    currentCategory = category;
-    
-    // Update button active styles across all category buttons
-    const filterButtons = document.querySelectorAll('.cat-filter-btn');
-    for (let i = 0; i < filterButtons.length; i++) {
-        const btn = filterButtons[i];
-        if (btn.getAttribute('data-cat') === category) {
-            btn.classList.add('active-filter');
-            btn.classList.remove('bg-white', 'text-slate-700');
-        } else {
-            btn.classList.remove('active-filter');
-            btn.classList.add('bg-white', 'text-slate-700');
-        }
-    }
 
     applyFilters();
 }
 
-// --- 4. Synchronized Live Search (Desktop & Mobile) ---
-function initSearch() {
-    const inputs = [
-        document.getElementById('gearSearch'),
-        document.getElementById('gearSearchDesktop'),
-        document.getElementById('gearSearchMobile')
-    ].filter(Boolean);
-
-    let debounceTimer;
-
-    inputs.forEach(input => {
-        input.addEventListener('input', (e) => {
-            clearTimeout(debounceTimer);
-            const val = e.target.value;
-            // Sync all other search fields
-            inputs.forEach(other => {
-                if (other !== e.target) other.value = val;
-            });
-
-            debounceTimer = setTimeout(() => {
-                applyFilters();
-            }, 50);
-        });
+// 3. Brand Filter
+function filterByBrand(brand) {
+    activeBrand = brand;
+    
+    // Update brand chips style
+    const chips = document.querySelectorAll('.brand-chip');
+    chips.forEach(chip => {
+        if (chip.getAttribute('data-brand') === brand) {
+            chip.className = "brand-chip active-brand-chip px-3 py-1 rounded-lg border border-slate-900 bg-slate-900 text-white font-bold whitespace-nowrap shadow-xs";
+        } else {
+            chip.className = "brand-chip px-3 py-1 rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 whitespace-nowrap";
+        }
     });
+
+    applyFilters();
+
+    // If triggered from Shop by Brand section, smoothly scroll down to the catalog
+    const catalogEl = document.getElementById('tackleCatalog');
+    if (catalogEl && window.scrollY < catalogEl.offsetTop - 100) {
+        catalogEl.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
+// 4. Reset All Filters
+function resetAllFilters() {
+    activeCategory = 'All';
+    activeBrand = 'All';
+    
+    const searchDesk = document.getElementById('gearSearch');
+    const searchMob = document.getElementById('gearSearchMobile');
+    if (searchDesk) searchDesk.value = '';
+    if (searchMob) searchMob.value = '';
+
+    filterByCategory('All');
+    filterByBrand('All');
+}
+
+// 5. Unified Filter Application
 function applyFilters() {
-    const searchEl = document.getElementById('gearSearch') || document.getElementById('gearSearchDesktop');
-    const query = searchEl ? searchEl.value.toLowerCase().trim() : '';
-    const products = document.querySelectorAll('.product-item');
+    const searchDesk = document.getElementById('gearSearch');
+    const searchMob = document.getElementById('gearSearchMobile');
+    const query = ((searchDesk && searchDesk.value) || (searchMob && searchMob.value) || '').toLowerCase().trim();
+
+    const items = document.querySelectorAll('.product-item');
     const noResults = document.getElementById('noResults');
+    const filterBadge = document.getElementById('activeFilterBadge');
+
     let visibleCount = 0;
 
-    for (let i = 0; i < products.length; i++) {
-        const product = products[i];
-        const cat = product.getAttribute('data-category');
-        const name = product.getAttribute('data-name').toLowerCase();
+    items.forEach(item => {
+        const itemBrand = item.getAttribute('data-brand');
+        const itemCat = item.getAttribute('data-category');
+        const itemName = (item.getAttribute('data-name') || '').toLowerCase();
 
-        const matchesCategory = (currentCategory === 'all' || cat === currentCategory);
-        const matchesQuery = (query === '' || name.indexOf(query) !== -1);
+        const matchBrand = (activeBrand === 'All' || itemBrand === activeBrand);
+        const matchCat = (activeCategory === 'All' || itemCat === activeCategory);
+        const matchQuery = (query === '' || itemName.includes(query) || itemBrand.toLowerCase().includes(query));
 
-        if (matchesCategory && matchesQuery) {
-            product.classList.remove('hidden');
+        if (matchBrand && matchCat && matchQuery) {
+            item.classList.remove('hidden');
             visibleCount++;
         } else {
-            product.classList.add('hidden');
+            item.classList.add('hidden');
         }
+    });
+
+    // Update Filter Indicator Badge
+    if (filterBadge) {
+        let label = 'Showing: ';
+        if (activeBrand === 'All' && activeCategory === 'All' && !query) {
+            label += `All Products (${visibleCount})`;
+        } else {
+            const parts = [];
+            if (activeBrand !== 'All') parts.push(`Brand: ${activeBrand}`);
+            if (activeCategory !== 'All') parts.push(`Category: ${activeCategory}`);
+            if (query) parts.push(`Search: "${query}"`);
+            label += `${parts.join(' • ')} (${visibleCount})`;
+        }
+        filterBadge.textContent = label;
     }
 
     if (noResults) {
@@ -132,10 +129,35 @@ function applyFilters() {
     }
 }
 
-// --- 5. Direct WhatsApp Order Generator ---
+// 6. Synchronized Live Search
+function initSearch() {
+    const searchDesk = document.getElementById('gearSearch');
+    const searchMob = document.getElementById('gearSearchMobile');
+    const inputs = [searchDesk, searchMob].filter(Boolean);
+
+    let debounceTimer;
+
+    inputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            const val = e.target.value;
+
+            // Sync other input
+            inputs.forEach(other => {
+                if (other !== e.target) other.value = val;
+            });
+
+            debounceTimer = setTimeout(() => {
+                applyFilters();
+            }, 60);
+        });
+    });
+}
+
+// 7. WhatsApp Order Builder
 function orderViaWhatsApp(productName, price) {
-    const message = `Hello Fishing Point! 🎣\n\nI want to enquire about/order this gear:\n*Product:* ${productName}\n*Price Reference:* ${price}\n\nCould you please let me know stock availability at your Alappuzha shop (Near Iron Bridge) and delivery options?`;
-    const encoded = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encoded}`;
-    window.open(whatsappUrl, '_blank');
+    const text = `Hello Fishing Point Alappuzha,\n\nI want to order/enquire about this tackle:\n*Product:* ${productName}\n*Price Reference:* ${price}\n\nCould you please confirm stock availability at your Iron Bridge shop (Mullakkal) and courier delivery options?`;
+    const encoded = encodeURIComponent(text);
+    const url = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encoded}`;
+    window.open(url, '_blank');
 }

@@ -1,13 +1,14 @@
 /* ==========================================================================
-   Fishing Point - Pakka Premium Marine Theme (Matching Official Logo)
+   Fishing Point - Clean Retail E-Commerce Theme
+   Inspired by Tackle Tips & Cabral Outdoors
+   100% Emoji-Free, Sophisticated Slate & Crisp Neutral Architecture
    ========================================================================== */
 
 :root {
-    --brand-teal: #00A79F;
-    --brand-teal-dark: #00857E;
-    --brand-teal-light: #26D0C7;
-    --brand-navy: #0A1E36;
-    --brand-deep: #061324;
+    --brand-primary: #0F172A;
+    --brand-accent: #059669;
+    --brand-border: #E2E8F0;
+    --brand-surface: #F8FAFC;
 }
 
 html {
@@ -17,26 +18,26 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Minimalist Scrollbar */
+/* Minimalist Scrollbar */
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #061324;
+    background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1e293b;
-    border-radius: 4px;
+    background: #CBD5E1;
+    border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #00A79F;
+    background: #94A3B8;
 }
 
-/* Hide horizontal scrollbar for category swipe */
+/* Hide scrollbar for category and brand sliders */
 .scrollbar-none::-webkit-scrollbar {
     display: none;
 }
@@ -45,123 +46,32 @@ html {
     scrollbar-width: none;
 }
 
-/* Liquid Water Wave Animation Keyframes */
-@keyframes waterWaveFlow {
-    0% { transform: translateX(0) translateZ(0) scaleY(1); }
-    50% { transform: translateX(-25%) translateZ(0) scaleY(0.85); }
-    100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
-}
-
-@keyframes floatGentle {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-7px); }
-}
-
-@keyframes pulseGlowAqua {
-    0%, 100% {
-        box-shadow: 0 0 15px rgba(0, 167, 159, 0.2), inset 0 0 10px rgba(0, 167, 159, 0.1);
-    }
-    50% {
-        box-shadow: 0 0 28px rgba(0, 167, 159, 0.4), inset 0 0 16px rgba(0, 167, 159, 0.2);
-    }
-}
-
-@keyframes waterRipple {
-    0% {
-        transform: scale(0.9);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1.4);
-        opacity: 0;
-    }
-}
-
-.animate-float-gentle {
-    animation: floatGentle 4s ease-in-out infinite;
-}
-
-.animate-pulse-aqua {
-    animation: pulseGlowAqua 3s ease-in-out infinite;
-}
-
-.ripple-ring {
-    position: absolute;
-    inset: -12px;
-    border-radius: 9999px;
-    border: 2px solid rgba(0, 167, 159, 0.4);
-    animation: waterRipple 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-    pointer-events: none;
-}
-
-.ripple-ring:nth-child(2) {
-    animation-delay: 1.25s;
-}
-
-/* Instagram Story Avatar Rings */
-.story-ring-gradient {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    padding: 2.5px;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.story-ring-teal {
-    background: linear-gradient(135deg, #00A79F, #26D0C7, #38BDF8);
-    padding: 2.5px;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.story-ring-gradient:hover,
-.story-ring-teal:hover {
-    transform: scale(1.08);
-}
-
-/* Active Category Pill - Matching Logo Teal */
-.cat-filter-btn.active-filter {
-    background-color: #00A79F !important;
-    color: #061324 !important;
-    border-color: #26D0C7 !important;
-    box-shadow: 0 4px 14px rgba(0, 167, 159, 0.4) !important;
-    font-weight: 800 !important;
-}
-
-/* Premium Card Hover & Transitions */
+/* Product Card Transitions */
 .product-item {
     content-visibility: auto;
-    contain-intrinsic-size: 340px;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
-    will-change: transform;
+    contain-intrinsic-size: 380px;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .product-item:hover {
-    border-color: #00A79F;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px -6px rgba(0, 167, 159, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
-/* Active tap feel for mobile shopping */
 .product-item:active {
-    transform: scale(0.98);
+    transform: scale(0.99);
 }
 
-/* Input focus ring with brand teal */
-input:focus {
-    border-color: #00A79F !important;
-    box-shadow: 0 0 0 3px rgba(0, 167, 159, 0.25) !important;
-}
-
-/* Smooth line clamps */
+/* Line Clamp utility */
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* Clean Input Focus */
+input:focus {
+    border-color: #0F172A !important;
+    box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.1) !important;
 }
