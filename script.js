@@ -225,7 +225,7 @@ function openProductModal(productId) {
         const specs = product.specs || [];
         specs.forEach(s => {
             const pill = document.createElement('span');
-            pill.className = "bg-white text-slate-800 border border-slate-200 px-2.5 py-1 rounded-lg text-xs font-semibold shadow-2xs";
+            pill.className = "bg-slate-100 text-slate-700 border border-slate-200/80 px-2 py-0.5 rounded text-[10px] font-semibold";
             pill.textContent = s;
             specsContainer.appendChild(pill);
         });
