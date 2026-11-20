@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing Point | Premium Tackle, Rods, Reels & Angling Gear</title>
+    <meta name="description" content="Fishing Point is Kerala's trusted fishing tackle shop for authentic rods, saltwater reels, Japanese lures, braided lines, and terminal tackle. Authorized dealer for top angling brands.">
+    
+    <!-- High-Speed Resource Preconnects & DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload Critical Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f2942',
+                            dark: '#0a1d30',
+                            blue: '#1b4d79',
+                            ocean: '#0284c7',
+                            light: '#f1f5f9',
+                            orange: '#f97316',
+                            red: '#dc2626',
+                            emerald: '#16a34a'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Top Info Utility Bar -->
+    <div class="bg-brand-navy text-slate-200 text-xs py-2 px-4 border-b border-brand-dark/50">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div class="flex items-center gap-4 text-center sm:text-left">
+                <span class="flex items-center gap-1.5 text-brand-orange font-semibold">
+                    <i class="fa-solid fa-truck-fast"></i> Delivery Across Kerala & India
+                </span>
+                <span class="hidden md:inline text-slate-500">|</span>
+                <span class="hidden md:inline text-slate-300">100% Genuine Tackle • Expert Rigging Advice</span>
+            </div>
+            <div class="flex items-center gap-4 font-medium">
+                <a href="tel:+919567330366" class="hover:text-white flex items-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-phone text-brand-orange"></i> +91 95673 30366
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="#store-location" class="hover:text-white flex items-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-location-dot text-brand-orange"></i> Store: Harbour Jn, Kochi
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 flex-shrink-0 group">
+                <div class="w-11 h-11 rounded-lg bg-brand-navy text-white flex items-center justify-center text-xl shadow-md group-hover:bg-brand-blue transition-colors">
+                    <i class="fa-solid fa-fish"></i>
+                </div>
+                <div>
+                    <span class="font-heading font-black text-2xl tracking-tight text-brand-navy uppercase block leading-none">
+                        FISHING <span class="text-brand-orange">POINT</span>
+                    </span>
+                    <span class="text-[10px] tracking-wider text-slate-500 font-semibold uppercase block mt-0.5">
+                        TACKLE & OUTDOORS
+                    </span>
+                </div>
+            </a>
+
+            <!-- Search Bar in Center (E-commerce Style) -->
+            <div class="hidden md:flex items-center flex-1 max-w-lg mx-6">
+                <div class="relative w-full">
+                    <input type="text" id="gearSearch" placeholder="Search rods, spinning reels, poppers, braids..." class="w-full bg-slate-100 border border-slate-300 rounded-lg pl-10 pr-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Header Action Items -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/919567330366?text=Hi%20Fishing%20Point,%20I%20am%20looking%20for%20fishing%20gear." target="_blank" class="px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="hidden sm:inline">WhatsApp Order</span>
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">
+                    <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Category Mega Nav Bar -->
+        <div class="hidden lg:block bg-slate-100 border-t border-slate-200 text-xs font-semibold text-slate-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+                <nav class="flex items-center gap-1 py-1">
+                    <button onclick="filterCategory('all')" class="cat-filter-btn active-filter px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="all">
+                        All Products
+                    </button>
+                    <button onclick="filterCategory('rods')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="rods">
+                        Fishing Rods
+                    </button>
+                    <button onclick="filterCategory('reels')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="reels">
+                        Reels
+                    </button>
+                    <button onclick="filterCategory('lures')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="lures">
+                        Lures & Jigs
+                    </button>
+                    <button onclick="filterCategory('lines')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="lines">
+                        Braided Lines & Leaders
+                    </button>
+                    <button onclick="filterCategory('terminal')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="terminal">
+                        Hooks & Terminal Tackle
+                    </button>
+                    <button onclick="filterCategory('accessories')" class="cat-filter-btn px-4 py-2 rounded-md hover:text-brand-navy transition-colors" data-cat="accessories">
+                        Accessories & Bags
+                    </button>
+                </nav>
+                <div class="flex items-center gap-2 text-brand-red font-bold uppercase tracking-wider text-[11px]">
+                    <i class="fa-solid fa-bolt"></i> Combo Deals Available
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-4 space-y-3">
+            <div class="relative mb-3">
+                <input type="text" id="mobileSearch" placeholder="Search gear..." class="w-full bg-slate-100 border border-slate-300 rounded-lg pl-9 pr-3 py-2 text-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+            </div>
+            <div class="flex flex-col gap-1 text-sm font-medium text-slate-700">
+                <button onclick="filterCategory('all'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">All Products</button>
+                <button onclick="filterCategory('rods'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Fishing Rods</button>
+                <button onclick="filterCategory('reels'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Spinning & Casting Reels</button>
+                <button onclick="filterCategory('lures'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Lures, Poppers & Metal Jigs</button>
+                <button onclick="filterCategory('lines'); closeMobileMenu();" class="text-left py-2 border-b border-slate-100 hover:text-brand-blue">Lines & Braids</button>
+                <button onclick="filterCategory('accessories'); closeMobileMenu();" class="text-left py-2 hover:text-brand-blue">Tackle Boxes & Accessories</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Retail Hero Banner (Clean, Realistic Outdoors Style like Cabral) -->
+    <section class="bg-gradient-to-r from-brand-navy via-brand-dark to-slate-900 text-white py-12 md:py-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-orange/20 border border-brand-orange/40 text-brand-orange text-xs font-bold uppercase tracking-wider">
+                        Authorized Tackle Dealer
+                    </div>
+                    
+                    <h1 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase">
+                        PREMIUM FISHING TACKLE FOR PASSIONATE ANGLERS
+                    </h1>
+                    
+                    <p class="text-slate-300 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
+                        Authorized retailer for world-class angling brands. Saltwater-rated spinning reels, high-modulus carbon rods, Japanese topwater lures, and braided lines built for tough Kerala backwaters and deep sea gamefish.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+                        <a href="#productCatalog" class="px-6 py-3 rounded-lg bg-brand-orange hover:bg-orange-600 text-white font-bold text-sm shadow-md transition-colors">
+                            Explore Tackle Catalog
+                        </a>
+                        <a href="https://wa.me/919567330366?text=Hi%20Fishing%20Point,%20I%20am%20looking%20for%20rod%20and%20reel%20recommendation." target="_blank" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <span>Ask for Pro Advice</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <!-- Clean Featured Combo Card (Realistic Retail Banner Card) -->
+                    <div class="bg-white text-slate-800 rounded-xl p-5 shadow-xl border border-slate-200">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                            <div>
+                                <span class="bg-brand-red text-white font-bold text-[10px] px-2 py-0.5 rounded uppercase">Deal of the Week</span>
+                                <h3 class="font-heading font-bold text-base text-brand-navy mt-1">Coastal Predator Starter Combo</h3>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-slate-400 line-through">₹6,800</span>
+                                <div class="font-heading font-black text-xl text-brand-orange">₹5,499</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2.5 text-xs text-slate-600 mb-4">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                                <span><strong>Rod:</strong> 2.4m High-Modulus Carbon 2-Piece (10-35g Cast Wt)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                                <span><strong>Reel:</strong> 4000 Series Saltwater Sealed (12kg Carbon Drag)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                                <span><strong>Included:</strong> Pre-spooled 8X Braid + 2 Saltwater Sinking Minnows</span>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/919567330366?text=Hello%20Fishing%20Point,%20I%20want%20to%20order%20the%20Coastal%20Predator%20Combo%20at%20Rs.5,499." target="_blank" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Order This Combo on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Banner (Crucial for real e-commerce feel) -->
+    <section class="bg-white border-b border-slate-200 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">
+                    Authorized Gear & Brands:
+                </span>
+                <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-600 font-heading font-black text-lg tracking-wider">
+                    <span class="hover:text-brand-navy cursor-pointer">SHIMANO</span>
+                    <span class="hover:text-brand-navy cursor-pointer">DAIWA</span>
+                    <span class="hover:text-brand-navy cursor-pointer">PENN</span>
+                    <span class="hover:text-brand-navy cursor-pointer">RAPALA</span>
+                    <span class="hover:text-brand-navy cursor-pointer">MUSTAD</span>
+                    <span class="hover:text-brand-navy cursor-pointer">ABU GARCIA</span>
+                    <span class="hover:text-brand-navy cursor-pointer">BERKLEY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Trust Badges -->
+    <section class="py-6 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0 text-lg">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-brand-navy">100% Genuine Gear</h4>
+                        <p class="text-[11px] text-slate-500">Direct authorized stock</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
+                    <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 text-lg">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-brand-navy">Fast WhatsApp Orders</h4>
+                        <p class="text-[11px] text-slate-500">Quick stock check & dispatch</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
+                    <div class="w-10 h-10 rounded-full bg-orange-50 text-brand-orange flex items-center justify-center flex-shrink-0 text-lg">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-brand-navy">Kerala & All-India Shipping</h4>
+                        <p class="text-[11px] text-slate-500">Secure parcel packing</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-3.5 rounded-lg border border-slate-200">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0 text-lg">
+                        <i class="fa-solid fa-handshake-simple"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-brand-navy">Store Spooling & Rigging</h4>
+                        <p class="text-[11px] text-slate-500">Visit our Kochi shop</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main E-Commerce Product Catalog Section -->
+    <section id="productCatalog" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-8 gap-4">
+                <div>
+                    <h2 class="font-heading font-extrabold text-2xl text-brand-navy uppercase">
+                        Current Tackle Inventory
+                    </h2>
+                    <p class="text-xs text-slate-500 mt-1">
+                        Select a category below or search gear. Click any product to order directly via WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Category Filters (Button Pills) -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none text-xs font-semibold">
+                    <button onclick="filterCategory('all')" class="cat-filter-btn active-filter px-3.5 py-1.5 rounded-full border border-slate-300 bg-brand-navy text-white whitespace-nowrap" data-cat="all">All</button>
+                    <button onclick="filterCategory('rods')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="rods">Rods</button>
+                    <button onclick="filterCategory('reels')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="reels">Reels</button>
+                    <button onclick="filterCategory('lures')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="lures">Lures & Jigs</button>
+                    <button onclick="filterCategory('lines')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="lines">Braids</button>
+                    <button onclick="filterCategory('terminal')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="terminal">Terminal Tackle</button>
+                    <button onclick="filterCategory('accessories')" class="cat-filter-btn px-3.5 py-1.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-brand-navy whitespace-nowrap" data-cat="accessories">Accessories</button>
+                </div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- Product 1: Shimano Sienna Reel -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="reels" data-name="Shimano Sienna 4000 FG Spinning Reel">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=400&q=75" alt="Shimano Sienna 4000 FG" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">SHIMANO</span>
+                            <span class="absolute top-2.5 right-2.5 bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded">In Stock</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Saltwater Spinning Reel</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Shimano Sienna 4000 FG Spinning Reel
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                AR-C spool design for longer casting, 3+1 ball bearings, 8.5kg max drag. Ideal for coastal shore casting.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹3,450</span>
+                                <span class="text-xs text-slate-400 line-through">₹4,200</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 18%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Shimano Sienna 4000 FG Spinning Reel', '₹3,450')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Daiwa Crossfire Rod -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="rods" data-name="Daiwa Crossfire X 2.4m Carbon Spinning Rod">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=75" alt="Daiwa Crossfire Rod" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">DAIWA</span>
+                            <span class="absolute top-2.5 right-2.5 bg-brand-orange text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Top Seller</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Carbon Spinning Rod</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Daiwa Crossfire X 2.4m Spinning Rod (Medium-Heavy)
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                High-density carbon graphite blank with titanium oxide guide rings. 14-40g lure rating for estuaries & rocks.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹2,850</span>
+                                <span class="text-xs text-slate-400 line-through">₹3,490</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 18%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Daiwa Crossfire X 2.4m Spinning Rod', '₹2,850')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Rapala X-Rap Saltwater Popper -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="lures" data-name="Rapala X-Rap Saltwater Popper 12cm 43g">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=75" alt="Rapala X-Rap Popper" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">RAPALA</span>
+                            <span class="absolute top-2.5 right-2.5 bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded">In Stock</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Topwater Popper</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Rapala X-Rap Saltwater Popper 12cm (43g)
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                Textured translucent body with internal holographic foil. Armed with 3X VMC Perma Steel treble hooks for GT.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹980</span>
+                                <span class="text-xs text-slate-400 line-through">₹1,150</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 15%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Rapala X-Rap Saltwater Popper 12cm 43g', '₹980')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Berkley FireLine Braid -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="lines" data-name="Berkley 8X Super Braid 300m 30LB">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=75" alt="Berkley Super Braid" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">BERKLEY</span>
+                            <span class="absolute top-2.5 right-2.5 bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded">In Stock</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Braided Fishing Line</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Berkley 8X Super Braid Line 300m Spool (30LB / 0.20mm)
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                8-carrier Dyneema fibers with smooth silicone coating. Exceptional casting smoothness and zero stretch.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹1,450</span>
+                                <span class="text-xs text-slate-400 line-through">₹1,750</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 17%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Berkley 8X Super Braid Line 300m 30LB', '₹1,450')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Penn Pursuit IV Saltwater Reel -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="reels" data-name="Penn Pursuit IV 5000 Saltwater Spinning Reel">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=400&q=75" alt="Penn Pursuit IV Reel" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">PENN</span>
+                            <span class="absolute top-2.5 right-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded">Heavy Duty</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Heavy Saltwater Reel</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Penn Pursuit IV 5000 Saltwater Spinning Reel
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                Corrosion-resistant graphite body, HT-100 carbon fiber drag washers. 11.3kg max drag for big game angling.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹5,200</span>
+                                <span class="text-xs text-slate-400 line-through">₹5,999</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 13%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Penn Pursuit IV 5000 Saltwater Reel', '₹5,200')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Mustad Treble Hooks & Swivels Kit -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="terminal" data-name="Mustad UltraPoint 3X Heavy Treble Hooks (Pack of 10)">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=75" alt="Mustad Hooks" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">MUSTAD</span>
+                            <span class="absolute top-2.5 right-2.5 bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded">In Stock</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Terminal Hooks</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Mustad UltraPoint 3X Saltwater Treble Hooks #1/0 (10 Pcs)
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                Chemically sharpened Nor-Tempered carbon steel with Titan Steel saltwater anti-rust coating.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹420</span>
+                                <span class="text-xs text-slate-400 line-through">₹499</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 15%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Mustad UltraPoint 3X Treble Hooks 10 Pcs', '₹420')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7: Slow Pitch Jig 60g -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="lures" data-name="Deep Sea Slow Pitch Flutter Jig 60g Luminous">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=75" alt="Slow Pitch Jig" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">PRO JIG</span>
+                            <span class="absolute top-2.5 right-2.5 bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded">Glow Striped</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Metal Vertical Jig</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Deep Sea Slow Pitch Flutter Jig 60g (Glow-in-Dark)
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                Asymmetric weighted balance creates erratic fluttering descent. Pre-rigged with twin assist hooks and flash tinsel.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹480</span>
+                                <span class="text-xs text-slate-400 line-through">₹580</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 17%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Deep Sea Slow Pitch Flutter Jig 60g', '₹480')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8: Waterproof Tackle Organizer Box -->
+                <div class="product-item bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between" data-category="accessories" data-name="Heavy Duty Waterproof Double-Sided Lure Utility Box">
+                    <div>
+                        <div class="relative bg-slate-50 h-52 p-4 flex items-center justify-center border-b border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=75" alt="Tackle Box" loading="lazy" decoding="async" width="260" height="180" class="max-h-full object-contain">
+                            <span class="absolute top-2.5 left-2.5 bg-brand-navy text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">STORAGE</span>
+                            <span class="absolute top-2.5 right-2.5 bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded">IP67 Sealed</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Tackle Storage</span>
+                            <h3 class="font-heading font-bold text-sm text-slate-800 leading-snug line-clamp-2">
+                                Waterproof Double-Sided Lure Utility Box (14 Slots)
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">
+                                Heavy silicone O-ring gasket keeps saltwater out. Y-groove slots protect treble hook tips from tangling.
+                            </p>
+                            <div class="pt-2 flex items-baseline gap-2">
+                                <span class="font-heading font-black text-lg text-brand-navy">₹590</span>
+                                <span class="text-xs text-slate-400 line-through">₹750</span>
+                                <span class="text-[10px] font-bold text-brand-red">Save 21%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsApp('Waterproof Double-Sided Lure Box', '₹590')" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Enquire on WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results message -->
+            <div id="noResults" class="hidden text-center py-12">
+                <i class="fa-solid fa-magnifying-glass text-3xl text-slate-300 mb-2"></i>
+                <p class="text-sm font-semibold text-slate-600">No matching gear found</p>
+                <p class="text-xs text-slate-400 mt-1">Please ping us on WhatsApp to check availability of custom gear or models.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Buy from Fishing Point (Clean retail info cards) -->
+    <section class="py-12 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="font-heading font-extrabold text-2xl text-brand-navy uppercase">
+                    Why Anglers Choose Fishing Point
+                </h2>
+                <p class="text-xs text-slate-500 mt-1">
+                    Authentic gear, honest angler advice, and direct distributor backing.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-12 h-12 rounded-lg bg-brand-navy text-white flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-base text-brand-navy">100% Genuine Authorized Products</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        We don't sell cheap knockoffs. Every reel, rod, and spool of line is sourced directly through official manufacturer channels.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-12 h-12 rounded-lg bg-brand-orange text-white flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-base text-brand-navy">Local Backwater & Sea Know-How</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Whether you are targeting Barramundi (Kalanji), Giant Trevally (Vatta), or Mangrove Jack (Chempalli), we help you select the exact winning tackle combination.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-base text-brand-navy">Free Spooling & Rigging Service</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Walk into our Kochi shop with your reel. We will spool your braid under tension, tie FG or PR knots for your leader, and inspect your drag system for free.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Location & Contact Details -->
+    <section id="store-location" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="text-brand-orange font-bold text-xs uppercase tracking-wider">Walk-In Store</span>
+                    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy uppercase">
+                        Visit Our Tackle Shop in Kochi
+                    </h2>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Stop by before your next morning fishing trip. Explore rods in hand, check drag smoothness, and browse fresh saltwater lures.
+                    </p>
+
+                    <div class="space-y-3 text-xs text-slate-700">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-brand-orange text-sm mt-0.5"></i>
+                            <div>
+                                <strong class="text-brand-navy block">Address:</strong>
+                                Fishing Point Tackle Shop, Near Harbour Junction, Main Coastal Road, Kochi, Kerala - 682001
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-brand-orange text-sm mt-0.5"></i>
+                            <div>
+                                <strong class="text-brand-navy block">Store Hours:</strong>
+                                Monday – Sunday: 7:00 AM – 9:00 PM (Open 7 Days a week)
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-600 text-base mt-0.5"></i>
+                            <div>
+                                <strong class="text-brand-navy block">Phone & WhatsApp Direct:</strong>
+                                <a href="tel:+919567330366" class="hover:underline font-semibold">+91 95673 30366</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://wa.me/919567330366?text=Hi%20Pappan,%20I%20am%20looking%20for%20directions%20or%20gear%20inquiry%20at%20Fishing%20Point." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Chat with Pappan on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <!-- Clean Local Google Maps Styled Container -->
+                    <div class="bg-slate-100 rounded-xl border border-slate-200 overflow-hidden shadow-sm h-72 relative flex items-center justify-center text-center p-6">
+                        <div class="space-y-2">
+                            <div class="w-12 h-12 rounded-full bg-brand-navy text-brand-orange flex items-center justify-center mx-auto text-xl shadow-md">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-sm text-brand-navy">Fishing Point - Kochi Outlet</h4>
+                            <p class="text-xs text-slate-500 max-w-xs mx-auto">Harbour Junction, Kochi, Kerala. Easily accessible with vehicle parking available.</p>
+                            <a href="https://maps.google.com/?q=Kochi+Kerala+Fishing+Tackle" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-brand-blue font-bold hover:underline pt-2">
+                                Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Retail Footer -->
+    <footer class="bg-brand-navy text-slate-300 py-10 text-xs border-t border-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-700/60">
+                
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded bg-brand-blue text-white flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-fish"></i>
+                        </div>
+                        <span class="font-heading font-bold text-lg text-white uppercase tracking-tight">
+                            FISHING <span class="text-brand-orange">POINT</span>
+                        </span>
+                    </div>
+                    <p class="text-slate-400 text-xs max-w-sm leading-relaxed">
+                        Kerala's premier destination for genuine saltwater and freshwater fishing tackle, high-drag reels, tournament braided lines, and pro angler guidance.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Tackle Categories</h4>
+                    <ul class="space-y-1.5 text-slate-400">
+                        <li><button onclick="filterCategory('rods')" class="hover:text-white">Fishing Rods</button></li>
+                        <li><button onclick="filterCategory('reels')" class="hover:text-white">Spinning & Casting Reels</button></li>
+                        <li><button onclick="filterCategory('lures')" class="hover:text-white">Lures, Poppers & Jigs</button></li>
+                        <li><button onclick="filterCategory('lines')" class="hover:text-white">Braided Lines & Leaders</button></li>
+                        <li><button onclick="filterCategory('accessories')" class="hover:text-white">Tackle Boxes & Accessories</button></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Customer Support</h4>
+                    <p class="text-slate-400 leading-relaxed mb-2">
+                        Harbour Junction, Kochi, Kerala<br>
+                        WhatsApp / Phone: +91 95673 30366<br>
+                        Direct Courier Delivery Across India
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500">
+                <p>© 2026 Fishing Point Tackle Shop. All rights reserved.</p>
+                <p>Authorized Dealer for Premium Angling Equipment</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Sticky WhatsApp Button with Bouncing Icon -->
+    <a href="https://wa.me/919567330366?text=Hi%20Fishing%20Point,%20I%20have%20an%20inquiry%20regarding%20fishing%20gear." target="_blank" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl animate-bounce"></i>
+        <span class="hidden sm:inline font-sans">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

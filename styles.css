@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Fishing Point - Performance-Optimized Retail Stylesheet
+   ========================================================================== */
+
+/* GPU Acceleration & Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Lightweight Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Hide scrollbar for category tabs */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Active Category Pill */
+.cat-filter-btn.active-filter {
+    background-color: #0f2942 !important;
+    color: #ffffff !important;
+    border-color: #0f2942 !important;
+    font-weight: 700 !important;
+}
+
+/* PERFORMANCE: Content-visibility for lightning fast rendering */
+.product-item {
+    content-visibility: auto;
+    contain-intrinsic-size: 380px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    will-change: transform;
+}
+
+.product-item:hover {
+    border-color: #0f2942;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Optimize footer & store location rendering */
+footer, #store-location {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px;
+}
+
+/* Floating WhatsApp button GPU layer */
+.whatsapp-float-btn {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Input focus */
+input:focus {
+    box-shadow: 0 0 0 2px rgba(15, 41, 66, 0.15);
+}
