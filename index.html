@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Fishing Point Alappuzha | ഒരു ചൂണ്ടക്കട - Official Tackle Store</title>
     <meta name="description" content="Fishing Point (ഒരു ചൂണ്ടക്കട) is Alappuzha's authorized fishing tackle store near Iron Bridge. Handpicked Shimano, Daiwa, Okuma, Major Craft, and Scaless tackle.">
     
@@ -31,7 +34,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="styles.css?v=5.7">
+    <link rel="stylesheet" href="styles.css?v=6.0">
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-6">
 
@@ -55,7 +58,7 @@
             <!-- Search Field (Desktop & Tablet) with Live Dropdown -->
             <div class="hidden md:flex items-center flex-1 max-w-md mx-4 relative" id="searchWrapperDesktop">
                 <div class="relative w-full">
-                    <input type="text" id="gearSearch" placeholder="Search by brand, reel model, rod, lure..." class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-10 pr-9 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-slate-900 transition-all">
+                    <input type="text" id="gearSearch" oninput="handleLiveSearch(this.value)" onkeydown="handleSearchKeydown(event)" placeholder="Search by brand, reel model, rod, lure..." class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-10 pr-9 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-slate-900 transition-all">
                     <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-xs"></i>
                     <button id="clearSearchDesktop" onclick="clearLiveSearch()" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-700 w-5 h-5 rounded-full flex items-center justify-center text-xs" aria-label="Clear search">
                         <i class="fa-solid fa-circle-xmark"></i>
@@ -91,7 +94,7 @@
         <!-- Mobile Search Strip with Live Dropdown -->
         <div class="md:hidden px-3 pb-2.5 relative" id="searchWrapperMobile">
             <div class="relative">
-                <input type="text" id="gearSearchMobile" placeholder="Search by brand, model, rods, reels..." class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-9 pr-8 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-slate-900 transition-all">
+                <input type="text" id="gearSearchMobile" oninput="handleLiveSearch(this.value)" onkeydown="handleSearchKeydown(event)" placeholder="Search by brand, model, rods, reels..." class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-9 pr-8 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-slate-900 transition-all">
                 <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
                 <button id="clearSearchMobile" onclick="clearLiveSearch()" class="hidden absolute right-2.5 top-2 text-slate-400 hover:text-slate-700 w-5 h-5 rounded-full flex items-center justify-center text-xs" aria-label="Clear search">
                     <i class="fa-solid fa-circle-xmark"></i>
@@ -2003,6 +2006,6 @@
     </script>
 
     <!-- Script with Cache Buster -->
-    <script src="script.js?v=5.7"></script>
+    <script src="script.js?v=6.0"></script>
 </body>
 </html>

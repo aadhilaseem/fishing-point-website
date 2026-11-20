@@ -13,15 +13,27 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initKeyboardShortcuts();
     initModalScrollProtection();
-    registerServiceWorker();
+    purgeServiceWorkersAndCaches();
 });
 
-// 1. Service Worker Registration
-function registerServiceWorker() {
-    if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js').catch(() => {});
-        });
+// Purge any active service workers and clear caches immediately
+purgeServiceWorkersAndCaches();
+
+// 1. Purge Service Workers & Clear Caches for Zero Stale Content
+function purgeServiceWorkersAndCaches() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+            for (let registration of registrations) {
+                registration.unregister();
+            }
+        }).catch(() => {});
+    }
+    if ('caches' in window) {
+        caches.keys().then((names) => {
+            for (let name of names) {
+                caches.delete(name);
+            }
+        }).catch(() => {});
     }
 }
 
@@ -156,52 +168,49 @@ function applyFilters() {
 }
 
 // 7. Synchronized Live Search & Instant Dropdown
-function initSearch() {
+let _searchDebounceTimer;
+
+function handleLiveSearch(val) {
+    clearTimeout(_searchDebounceTimer);
     const searchDesk = document.getElementById('gearSearch');
     const searchMob = document.getElementById('gearSearchMobile');
     const clearDesk = document.getElementById('clearSearchDesktop');
     const clearMob = document.getElementById('clearSearchMobile');
+
+    if (searchDesk && searchDesk.value !== val) searchDesk.value = val;
+    if (searchMob && searchMob.value !== val) searchMob.value = val;
+
+    if (clearDesk) clearDesk.classList.toggle('hidden', !val);
+    if (clearMob) clearMob.classList.toggle('hidden', !val);
+
+    renderSearchDropdown(val);
+
+    _searchDebounceTimer = setTimeout(() => {
+        applyFilters();
+    }, 30);
+}
+
+function handleSearchKeydown(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        if (e.target && e.target.blur) e.target.blur();
+        closeSearchDropdown();
+        const catalogEl = document.getElementById('tackleCatalog');
+        if (catalogEl) {
+            catalogEl.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
+
+function initSearch() {
+    const searchDesk = document.getElementById('gearSearch');
+    const searchMob = document.getElementById('gearSearchMobile');
     const inputs = [searchDesk, searchMob].filter(Boolean);
 
-    let debounceTimer;
-
     inputs.forEach(input => {
-        // Live Input Event
-        input.addEventListener('input', (e) => {
-            clearTimeout(debounceTimer);
-            const val = e.target.value;
-
-            // Sync other input
-            inputs.forEach(other => {
-                if (other !== e.target) other.value = val;
-            });
-
-            // Toggle clear button
-            if (clearDesk) clearDesk.classList.toggle('hidden', !val);
-            if (clearMob) clearMob.classList.toggle('hidden', !val);
-
-            // Render instant live dropdown immediately
-            renderSearchDropdown(val);
-
-            debounceTimer = setTimeout(() => {
-                applyFilters();
-            }, 30);
-        });
-
-        // Keydown Handler for Enter: Auto-scroll down to results in catalog
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                input.blur();
-                closeSearchDropdown();
-                const catalogEl = document.getElementById('tackleCatalog');
-                if (catalogEl) {
-                    catalogEl.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-
-        // Focus Handler
+        // Direct event listener fallback
+        input.addEventListener('input', (e) => handleLiveSearch(e.target.value));
+        input.addEventListener('keydown', (e) => handleSearchKeydown(e));
         input.addEventListener('focus', () => {
             if (input.value.trim().length > 0) {
                 renderSearchDropdown(input.value);
@@ -471,6 +480,9 @@ function initKeyboardShortcuts() {
 }
 
 // Attach directly to window for global inline accessibility
+window.handleLiveSearch = handleLiveSearch;
+window.handleSearchKeydown = handleSearchKeydown;
+window.renderSearchDropdown = renderSearchDropdown;
 window.filterByCategory = filterByCategory;
 window.filterByBrand = filterByBrand;
 window.resetAllFilters = resetAllFilters;

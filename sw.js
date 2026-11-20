@@ -1,57 +1,20 @@
 // ==========================================================================
-// Fishing Point - Service Worker v5 (Cache Invalidation & Fresh Delivery)
+// Fishing Point - Service Worker Self-Unregister & Cache Purge
+// Ensures instant delivery of fresh updates during active testing
 // ==========================================================================
 
-const CACHE_NAME = 'fishing-point-v5.7';
-const ASSETS_TO_CACHE = [
-    './',
-    './index.html',
-    './styles.css?v=5.7',
-    './script.js?v=5.7',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
-];
-
-self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(ASSETS_TO_CACHE).catch(() => {});
-        }).then(() => self.skipWaiting())
-    );
+self.addEventListener('install', () => {
+    self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
     event.waitUntil(
         caches.keys().then((keys) => {
-            return Promise.all(
-                keys.map((key) => {
-                    if (key !== CACHE_NAME) {
-                        return caches.delete(key);
-                    }
-                })
-            );
-        }).then(() => self.clients.claim())
-    );
-});
-
-self.addEventListener('fetch', (event) => {
-    if (event.request.method !== 'GET') return;
-
-    // Network-first for local assets so updates land immediately
-    const url = new URL(event.request.url);
-    if (url.origin === location.origin) {
-        event.respondWith(
-            fetch(event.request).then((networkResponse) => {
-                if (networkResponse && networkResponse.status === 200) {
-                    const clone = networkResponse.clone();
-                    caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-                }
-                return networkResponse;
-            }).catch(() => caches.match(event.request))
-        );
-        return;
-    }
-
-    event.respondWith(
-        caches.match(event.request).then((cached) => cached || fetch(event.request))
+            return Promise.all(keys.map((k) => caches.delete(k)));
+        }).then(() => {
+            return self.registration.unregister();
+        }).then(() => {
+            return self.clients.claim();
+        })
     );
 });
