@@ -1,6 +1,6 @@
 // ==========================================================================
-// Fishing Point - High-Performance E-Commerce Interactivity v4.0
-// Zero Latency, Scroll Reveal Animations, Robust Filtering
+// Fishing Point - High-Performance E-Commerce Interactivity v5.0
+// Quick View Modal with Backdrop Blur, Zero Latency, Fast Filtering
 // ==========================================================================
 
 const STORE_WHATSAPP_NUMBER = "919567330366";
@@ -11,6 +11,7 @@ let activeBrand = 'All';
 document.addEventListener('DOMContentLoaded', () => {
     initSearch();
     initScrollReveal();
+    initKeyboardShortcuts();
     registerServiceWorker();
 });
 
@@ -186,8 +187,115 @@ function orderViaWhatsApp(productName, price) {
     window.open(url, '_blank');
 }
 
+// ==========================================================================
+// 9. Interactive Product Quick View Modal (Popup with Blur Background)
+// ==========================================================================
+
+function openProductModal(productId) {
+    const db = window.PRODUCTS_DB || [];
+    const product = db.find(p => p.id === productId);
+
+    if (!product) return;
+
+    // Populate Modal Elements
+    const modal = document.getElementById('productModal');
+    const modalImg = document.getElementById('modalProductImg');
+    const modalName = document.getElementById('modalProductName');
+    const modalPrice = document.getElementById('modalProductPrice');
+    const modalDesc = document.getElementById('modalProductDesc');
+    const modalBrand = document.getElementById('modalBrandBadge');
+    const modalCat = document.getElementById('modalCategoryBadge');
+    const specsContainer = document.getElementById('modalSpecsContainer');
+    const featuresList = document.getElementById('modalFeaturesList');
+    const whatsAppBtn = document.getElementById('modalWhatsAppBtn');
+
+    if (modalImg) {
+        modalImg.src = product.img;
+        modalImg.alt = product.name;
+    }
+    if (modalName) modalName.textContent = product.name;
+    if (modalPrice) modalPrice.textContent = product.price;
+    if (modalDesc) modalDesc.textContent = product.desc || 'Authorized gear available at Fishing Point Alappuzha.';
+    if (modalBrand) modalBrand.textContent = product.brand;
+    if (modalCat) modalCat.textContent = product.category_name || product.category;
+
+    // Populate Specs
+    if (specsContainer) {
+        specsContainer.innerHTML = '';
+        const specs = product.specs || [];
+        specs.forEach(s => {
+            const pill = document.createElement('span');
+            pill.className = "bg-white text-slate-800 border border-slate-200 px-2.5 py-1 rounded-lg text-xs font-semibold shadow-2xs";
+            pill.textContent = s;
+            specsContainer.appendChild(pill);
+        });
+    }
+
+    // Populate Features
+    if (featuresList) {
+        featuresList.innerHTML = '';
+        const features = product.features || [
+            "100% Genuine manufacturer stock verified for Kerala waters",
+            "Free professional braid machine spooling included",
+            "Available for walk-in pickup near Iron Bridge & All-Kerala delivery"
+        ];
+        features.forEach(f => {
+            const li = document.createElement('li');
+            li.className = "flex items-start gap-2";
+            li.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 text-[11px] mt-0.5"></i><span>${f}</span>`;
+            featuresList.appendChild(li);
+        });
+    }
+
+    // WhatsApp Action
+    if (whatsAppBtn) {
+        whatsAppBtn.onclick = () => {
+            orderViaWhatsApp(product.name, product.price);
+        };
+    }
+
+    // Open Modal with Spring Elevation & Blur Background
+    if (modal) {
+        modal.classList.remove('hidden');
+        // Force reflow for smooth transition
+        void modal.offsetWidth;
+        modal.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeProductModal() {
+    const modal = document.getElementById('productModal');
+    if (!modal) return;
+
+    modal.classList.remove('modal-open');
+    document.body.style.overflow = '';
+
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 250);
+}
+
+function handleBackdropClick(event) {
+    const modalCard = document.getElementById('modalCard');
+    if (modalCard && !modalCard.contains(event.target)) {
+        closeProductModal();
+    }
+}
+
+function initKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeProductModal();
+        }
+    });
+}
+
 // Attach directly to window for global inline accessibility
 window.filterByCategory = filterByCategory;
 window.filterByBrand = filterByBrand;
 window.resetAllFilters = resetAllFilters;
 window.orderViaWhatsApp = orderViaWhatsApp;
+window.openProductModal = openProductModal;
+window.closeProductModal = closeProductModal;
+window.handleBackdropClick = handleBackdropClick;

@@ -31,7 +31,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="styles.css?v=4.0">
+    <link rel="stylesheet" href="styles.css?v=5.0">
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-20 md:pb-6">
 
@@ -322,7 +322,7 @@
                 <div>
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-widest block">Verified Store Stock</span>
                     <h2 class="font-heading font-black text-xl sm:text-3xl text-slate-900 uppercase mt-0.5">Available Fishing Tackle</h2>
-                    <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Filter by brand or category. 1-click WhatsApp inquiry with exact model reference.</p>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Click any gear card to pop up full specs, photos & WhatsApp availability inquiry.</p>
                 </div>
 
                 <!-- Active Filter Indicator -->
@@ -371,19 +371,27 @@
             <!-- Product Grid -->
             <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
 
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Shimano" data-category="Reels" data-name="Shimano 2026 Miravel A C3000 HG">
+                <article onclick="openProductModal('sh-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Shimano" data-category="Reels" data-name="Shimano 2026 Miravel A C3000 HG">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17930765757386.jpg" alt="Shimano 2026 Miravel A C3000 HG" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Shimano</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">New Arrival</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Spinning Reel</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Shimano 2026 Miravel A C3000 HG
                             </h3>
 
@@ -403,27 +411,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Shimano 2026 Miravel A C3000 HG', '₹11,915.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sh-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Shimano 2026 Miravel A C3000 HG', '₹11,915.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Shimano" data-category="Reels" data-name="Shimano Saragosa SW 8000HGA">
+                <article onclick="openProductModal('sh-2')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Shimano" data-category="Reels" data-name="Shimano Saragosa SW 8000HGA">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17928308617828.png" alt="Shimano Saragosa SW 8000HGA" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Shimano</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Offshore Heavy</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Heavy Saltwater Reel</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Shimano Saragosa SW 8000HGA
                             </h3>
 
@@ -443,27 +463,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Shimano Saragosa SW 8000HGA', '₹31,277.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sh-2');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Shimano Saragosa SW 8000HGA', '₹31,277.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Shimano" data-category="Reels" data-name="Shimano 2026 Nexave C3000HGJ">
+                <article onclick="openProductModal('sh-3')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Shimano" data-category="Reels" data-name="Shimano 2026 Nexave C3000HGJ">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17908360087192.jpg" alt="Shimano 2026 Nexave C3000HGJ" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Shimano</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Best Seller</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Spinning Reel</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Shimano 2026 Nexave C3000HGJ
                             </h3>
 
@@ -483,27 +515,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Shimano 2026 Nexave C3000HGJ', '₹5,222.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sh-3');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Shimano 2026 Nexave C3000HGJ', '₹5,222.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Shimano" data-category="Reels" data-name="Shimano 2025 Nasci 1000D">
+                <article onclick="openProductModal('sh-4')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Shimano" data-category="Reels" data-name="Shimano 2025 Nasci 1000D">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17908374768761.jpg" alt="Shimano 2025 Nasci 1000D" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Shimano</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Backwater Special</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Ultra-Light Reel</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Shimano 2025 Nasci 1000D
                             </h3>
 
@@ -523,27 +567,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Shimano 2025 Nasci 1000D', '₹8,556.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sh-4');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Shimano 2025 Nasci 1000D', '₹8,556.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Shimano" data-category="Lines" data-name="Shimano Kairiki +8 150m Mantis Green">
+                <article onclick="openProductModal('sh-5')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Shimano" data-category="Lines" data-name="Shimano Kairiki +8 150m Mantis Green">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17943810697542.jpg" alt="Shimano Kairiki +8 150m Mantis Green" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Shimano</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Japanese PE</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">8X Braided Line</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Shimano Kairiki +8 150m Mantis Green
                             </h3>
 
@@ -563,27 +619,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Shimano Kairiki +8 150m Mantis Green', '₹1,815.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sh-5');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Shimano Kairiki +8 150m Mantis Green', '₹1,815.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Shimano" data-category="Reels" data-name="Shimano 2025 Tranx 400HGB Baitcaster">
+                <article onclick="openProductModal('sh-6')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Shimano" data-category="Reels" data-name="Shimano 2025 Tranx 400HGB Baitcaster">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17894523418242.jpg" alt="Shimano 2025 Tranx 400HGB Baitcaster" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Shimano</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Heavy Duty</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Baitcasting Reel</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Shimano 2025 Tranx 400HGB Baitcaster
                             </h3>
 
@@ -603,27 +671,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Shimano 2025 Tranx 400HGB Baitcaster', '₹51,736.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sh-6');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Shimano 2025 Tranx 400HGB Baitcaster', '₹51,736.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Daiwa" data-category="Reels" data-name="Daiwa 2026 ZX 5000XHARK Spinning Reel">
+                <article onclick="openProductModal('dw-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Daiwa" data-category="Reels" data-name="Daiwa 2026 ZX 5000XHARK Spinning Reel">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17925760544300.jpg" alt="Daiwa 2026 ZX 5000XHARK Spinning Reel" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Daiwa</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">New Release</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Spinning Reel</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Daiwa 2026 ZX 5000XHARK Spinning Reel
                             </h3>
 
@@ -643,27 +723,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Daiwa 2026 ZX 5000XHARK Spinning Reel', '₹4,360.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('dw-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Daiwa 2026 ZX 5000XHARK Spinning Reel', '₹4,360.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Daiwa" data-category="Reels" data-name="Daiwa 2025 Revros LT 4000 HG-CXH">
+                <article onclick="openProductModal('dw-2')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Daiwa" data-category="Reels" data-name="Daiwa 2025 Revros LT 4000 HG-CXH">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17851394555887.jpg" alt="Daiwa 2025 Revros LT 4000 HG-CXH" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Daiwa</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Tough LT</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Spinning Reel</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Daiwa 2025 Revros LT 4000 HG-CXH
                             </h3>
 
@@ -683,27 +775,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Daiwa 2025 Revros LT 4000 HG-CXH', '₹5,800.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('dw-2');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Daiwa 2025 Revros LT 4000 HG-CXH', '₹5,800.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Daiwa" data-category="Rods" data-name="Daiwa Tatula Travel Baitcasting Rod 694HB">
+                <article onclick="openProductModal('dw-3')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Daiwa" data-category="Rods" data-name="Daiwa Tatula Travel Baitcasting Rod 694HB">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17926500275362.png" alt="Daiwa Tatula Travel Baitcasting Rod 694HB" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Daiwa</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Travel Ready</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">4-Piece Travel Rod</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Daiwa Tatula Travel Baitcasting Rod 694HB
                             </h3>
 
@@ -723,27 +827,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Daiwa Tatula Travel Baitcasting Rod 694HB', '₹11,470.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('dw-3');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Daiwa Tatula Travel Baitcasting Rod 694HB', '₹11,470.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Daiwa" data-category="Lines" data-name="Daiwa J-Braid Expedition 300m Multi-Color">
+                <article onclick="openProductModal('dw-4')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Daiwa" data-category="Lines" data-name="Daiwa J-Braid Expedition 300m Multi-Color">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17637158231977.jpg" alt="Daiwa J-Braid Expedition 300m Multi-Color" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Daiwa</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Silicon Coated</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Izanas 8X Braid</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Daiwa J-Braid Expedition 300m Multi-Color
                             </h3>
 
@@ -763,27 +879,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Daiwa J-Braid Expedition 300m Multi-Color', '₹2,613.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('dw-4');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Daiwa J-Braid Expedition 300m Multi-Color', '₹2,613.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Daiwa" data-category="Lures" data-name="Daiwa Saltiga Frother 200F Blue Back">
+                <article onclick="openProductModal('dw-5')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Daiwa" data-category="Lures" data-name="Daiwa Saltiga Frother 200F Blue Back">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17936191673528.jpg" alt="Daiwa Saltiga Frother 200F Blue Back" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Daiwa</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">GT & Barra</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Offshore Floating Popper</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Daiwa Saltiga Frother 200F Blue Back
                             </h3>
 
@@ -803,27 +931,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Daiwa Saltiga Frother 200F Blue Back', '₹3,702.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('dw-5');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Daiwa Saltiga Frother 200F Blue Back', '₹3,702.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Daiwa" data-category="Lures" data-name="Daiwa Saltiga Cuddler 185F Clear Top Yellow">
+                <article onclick="openProductModal('dw-6')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Daiwa" data-category="Lures" data-name="Daiwa Saltiga Cuddler 185F Clear Top Yellow">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17936909861523.jpg" alt="Daiwa Saltiga Cuddler 185F Clear Top Yellow" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Daiwa</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Surface Action</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Floating Stickbait</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Daiwa Saltiga Cuddler 185F Clear Top Yellow
                             </h3>
 
@@ -843,27 +983,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Daiwa Saltiga Cuddler 185F Clear Top Yellow', '₹2,158.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('dw-6');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Daiwa Saltiga Cuddler 185F Clear Top Yellow', '₹2,158.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Okuma" data-category="Rods" data-name="Okuma Wave Power Spinning Rod 9ft">
+                <article onclick="openProductModal('ok-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Okuma" data-category="Rods" data-name="Okuma Wave Power Spinning Rod 9ft">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17942938403839.jpg" alt="Okuma Wave Power Spinning Rod 9ft" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Okuma</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">High Value</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Spinning Rod</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Okuma Wave Power Spinning Rod 9ft
                             </h3>
 
@@ -883,27 +1035,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Okuma Wave Power Spinning Rod 9ft', '₹1,450.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('ok-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Okuma Wave Power Spinning Rod 9ft', '₹1,450.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Okuma" data-category="Rods" data-name="Okuma Wave Power Spinning Rod 8ft">
+                <article onclick="openProductModal('ok-2')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Okuma" data-category="Rods" data-name="Okuma Wave Power Spinning Rod 8ft">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17942937875818.jpg" alt="Okuma Wave Power Spinning Rod 8ft" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Okuma</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Shore Cast</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Spinning Rod</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Okuma Wave Power Spinning Rod 8ft
                             </h3>
 
@@ -923,27 +1087,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Okuma Wave Power Spinning Rod 8ft', '₹1,380.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('ok-2');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Okuma Wave Power Spinning Rod 8ft', '₹1,380.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Okuma" data-category="Rods" data-name="Okuma Competition Spinning Rod 7ft">
+                <article onclick="openProductModal('ok-3')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Okuma" data-category="Rods" data-name="Okuma Competition Spinning Rod 7ft">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17942933241585.jpg" alt="Okuma Competition Spinning Rod 7ft" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Okuma</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Backwater Rig</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Carbon Rod</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Okuma Competition Spinning Rod 7ft
                             </h3>
 
@@ -963,27 +1139,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Okuma Competition Spinning Rod 7ft', '₹1,550.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('ok-3');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Okuma Competition Spinning Rod 7ft', '₹1,550.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Major Craft" data-category="Rods" data-name="Major Craft Giant Killing 5G Offshore Casting GK5C-76">
+                <article onclick="openProductModal('mc-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Major Craft" data-category="Rods" data-name="Major Craft Giant Killing 5G Offshore Casting GK5C-76">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17930961108835.jpg" alt="Major Craft Giant Killing 5G Offshore Casting GK5C-76" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Major Craft</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Toray R360</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Offshore Casting Rod</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Major Craft Giant Killing 5G Offshore Casting GK5C-76
                             </h3>
 
@@ -1003,27 +1191,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Major Craft Giant Killing 5G Offshore Casting GK5C-76', '₹17,725.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('mc-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Major Craft Giant Killing 5G Offshore Casting GK5C-76', '₹17,725.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Major Craft" data-category="Rods" data-name="Major Craft Crosride 1G XR1-1002M Shore Jigging">
+                <article onclick="openProductModal('mc-2')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Major Craft" data-category="Rods" data-name="Major Craft Crosride 1G XR1-1002M Shore Jigging">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17927558801244.png" alt="Major Craft Crosride 1G XR1-1002M Shore Jigging" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Major Craft</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Shore Jigging</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Shore Jigging Rod</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Major Craft Crosride 1G XR1-1002M Shore Jigging
                             </h3>
 
@@ -1043,27 +1243,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Major Craft Crosride 1G XR1-1002M Shore Jigging', '₹13,007.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('mc-2');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Major Craft Crosride 1G XR1-1002M Shore Jigging', '₹13,007.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Scaless" data-category="Lures" data-name="Scaless Kukri 60 Pink Phantom Minnow">
+                <article onclick="openProductModal('sc-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Scaless" data-category="Lures" data-name="Scaless Kukri 60 Pink Phantom Minnow">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17943010181211.jpg" alt="Scaless Kukri 60 Pink Phantom Minnow" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Scaless</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Mangrove Jack</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Sinking Minnow</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Scaless Kukri 60 Pink Phantom Minnow
                             </h3>
 
@@ -1083,27 +1295,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Scaless Kukri 60 Pink Phantom Minnow', '₹590.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sc-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Scaless Kukri 60 Pink Phantom Minnow', '₹590.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Scaless" data-category="Lures" data-name="Scaless Kratos 115 Silver Storm Popper">
+                <article onclick="openProductModal('sc-2')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Scaless" data-category="Lures" data-name="Scaless Kratos 115 Silver Storm Popper">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17939481801060.png" alt="Scaless Kratos 115 Silver Storm Popper" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Scaless</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Barramundi Special</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Topwater Popper</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Scaless Kratos 115 Silver Storm Popper
                             </h3>
 
@@ -1123,27 +1347,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Scaless Kratos 115 Silver Storm Popper', '₹998.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sc-2');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Scaless Kratos 115 Silver Storm Popper', '₹998.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Scaless" data-category="Lures" data-name="Scaless Kratos 115 Candy Pink Popper">
+                <article onclick="openProductModal('sc-3')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Scaless" data-category="Lures" data-name="Scaless Kratos 115 Candy Pink Popper">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17939481432973.png" alt="Scaless Kratos 115 Candy Pink Popper" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Scaless</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">High Visibility</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Topwater Popper</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Scaless Kratos 115 Candy Pink Popper
                             </h3>
 
@@ -1163,27 +1399,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Scaless Kratos 115 Candy Pink Popper', '₹998.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sc-3');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Scaless Kratos 115 Candy Pink Popper', '₹998.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Scaless" data-category="Lures" data-name="Scaless Naga 70 Hollow Pink Vibrating Lure">
+                <article onclick="openProductModal('sc-4')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Scaless" data-category="Lures" data-name="Scaless Naga 70 Hollow Pink Vibrating Lure">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17938657243805.jpg" alt="Scaless Naga 70 Hollow Pink Vibrating Lure" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Scaless</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Deep Canal</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Lipless Vibe</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Scaless Naga 70 Hollow Pink Vibrating Lure
                             </h3>
 
@@ -1203,27 +1451,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Scaless Naga 70 Hollow Pink Vibrating Lure', '₹510.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('sc-4');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Scaless Naga 70 Hollow Pink Vibrating Lure', '₹510.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="BKK" data-category="Hooks" data-name="BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack)">
+                <article onclick="openProductModal('bkk-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="BKK" data-category="Hooks" data-name="BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack)">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/16654695514082.jpg" alt="BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack)" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">BKK</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Hand Ground</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">4X Treble Hooks</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack)
                             </h3>
 
@@ -1243,27 +1503,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack)', '₹655.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('bkk-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack)', '₹655.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="BKK" data-category="Hooks" data-name="BKK Solid Core Assist Cord 50LB">
+                <article onclick="openProductModal('bkk-2')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="BKK" data-category="Hooks" data-name="BKK Solid Core Assist Cord 50LB">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/16663369022641.jpg" alt="BKK Solid Core Assist Cord 50LB" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">BKK</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">High Tenacity</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Jigging Assist Line</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 BKK Solid Core Assist Cord 50LB
                             </h3>
 
@@ -1283,27 +1555,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('BKK Solid Core Assist Cord 50LB', '₹430.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('bkk-2');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('BKK Solid Core Assist Cord 50LB', '₹430.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="BKK" data-category="Hooks" data-name="BKK Double Assist Hook Loose Pack">
+                <article onclick="openProductModal('bkk-3')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="BKK" data-category="Hooks" data-name="BKK Double Assist Hook Loose Pack">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17912741682558.jpg" alt="BKK Double Assist Hook Loose Pack" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">BKK</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Pre-Rigged</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Jig Assist Hooks</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 BKK Double Assist Hook Loose Pack
                             </h3>
 
@@ -1323,27 +1607,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('BKK Double Assist Hook Loose Pack', '₹175.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('bkk-3');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('BKK Double Assist Hook Loose Pack', '₹175.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Gfin" data-category="Lines" data-name="Gfin SW Shore Cast Braid 300m 70LB PE 4.0">
+                <article onclick="openProductModal('gf-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Gfin" data-category="Lines" data-name="Gfin SW Shore Cast Braid 300m 70LB PE 4.0">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17924765711885.jpg" alt="Gfin SW Shore Cast Braid 300m 70LB PE 4.0" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Gfin</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Shore Jigging</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Saltwater Braid</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Gfin SW Shore Cast Braid 300m 70LB PE 4.0
                             </h3>
 
@@ -1363,27 +1659,39 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Gfin SW Shore Cast Braid 300m 70LB PE 4.0', '₹2,885.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('gf-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Gfin SW Shore Cast Braid 300m 70LB PE 4.0', '₹2,885.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
-                <article class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-brand="Meiho" data-category="Accessories" data-name="Meiho Cabin 2040 Tackle Box Grey">
+                <article onclick="openProductModal('mh-1')" class="reveal product-item bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer" data-brand="Meiho" data-category="Accessories" data-name="Meiho Cabin 2040 Tackle Box Grey">
                     <div>
-                        <!-- Image Container with Zoom -->
+                        <!-- Image Container with Zoom & Quick View Badge -->
                         <div class="relative bg-slate-50 aspect-square p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-slate-100">
                             <img src="https://tackletips.in/uploads/product/thumb_images/17950665527402.jpg" alt="Meiho Cabin 2040 Tackle Box Grey" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500" onerror="this.src='assets/reel.jpg'">
                             <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider">Meiho</span>
                             <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded">Made in Japan</span>
+                            
+                            <!-- Hover Quick View Pill -->
+                            <div class="absolute inset-x-0 bottom-2 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                <span class="bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-[9px]"></i>
+                                    <span>Quick View</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Info Container -->
                         <div class="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide block truncate">Utility Tackle Box</span>
-                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px]">
+                            <h3 class="font-heading font-bold text-xs sm:text-sm text-slate-900 leading-snug line-clamp-2 min-h-[34px] sm:min-h-[38px] group-hover:text-emerald-700 transition-colors">
                                 Meiho Cabin 2040 Tackle Box Grey
                             </h3>
 
@@ -1403,11 +1711,15 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp CTA -->
-                    <div class="p-3 sm:p-4 pt-0">
-                        <button onclick="orderViaWhatsApp('Meiho Cabin 2040 Tackle Box Grey', '₹750.00')" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span>WhatsApp Order</span>
+                    <!-- Action Buttons: Details / WhatsApp -->
+                    <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-1.5">
+                        <button onclick="event.stopPropagation(); openProductModal('mh-1');" class="w-full py-2 sm:py-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 transition-all active:scale-95">
+                            <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            <span>Details</span>
+                        </button>
+                        <button onclick="event.stopPropagation(); orderViaWhatsApp('Meiho Cabin 2040 Tackle Box Grey', '₹750.00');" class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center gap-1 shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+                            <span>Order</span>
                         </button>
                     </div>
                 </article>
@@ -1543,7 +1855,7 @@
     </footer>
 
     <!-- STICKY MOBILE DOCK (100% CLEAN APP NAVIGATION) -->
-    <div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200 py-2 px-4 flex items-center justify-around shadow-lg">
+    <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200 py-2 px-4 flex items-center justify-around shadow-lg">
         <a href="#" class="flex flex-col items-center gap-0.5 text-slate-900">
             <i class="fa-solid fa-house text-base"></i>
             <span class="text-[10px] font-bold">Home</span>
@@ -1566,7 +1878,95 @@
         </a>
     </div>
 
+    <!-- PRODUCT QUICK VIEW POPUP MODAL (Backdrop Blur & Smooth Spring Elevation) -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-5 bg-slate-950/60 backdrop-blur-md transition-all duration-300 opacity-0" aria-modal="true" role="dialog" onclick="handleBackdropClick(event)">
+        <div id="modalCard" class="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 transition-all duration-300 max-h-[92vh] flex flex-col" onclick="event.stopPropagation()">
+            
+            <!-- Modal Header with Close Button -->
+            <div class="p-4 sm:p-5 pb-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+                <div class="flex items-center gap-2">
+                    <span id="modalBrandBadge" class="bg-slate-900 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">BRAND</span>
+                    <span id="modalCategoryBadge" class="text-xs font-semibold text-slate-500 uppercase">CATEGORY</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                        In Stock
+                    </span>
+                </div>
+                <button onclick="closeProductModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors active:scale-95" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Modal Scrollable Content -->
+            <div class="overflow-y-auto p-4 sm:p-6 space-y-4 scrollbar-none">
+                
+                <!-- Top Section: Image & Main Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                    <div class="sm:col-span-5 bg-slate-50 border border-slate-100 rounded-2xl p-4 aspect-square flex items-center justify-center overflow-hidden">
+                        <img id="modalProductImg" src="" alt="Product Image" class="w-full h-full object-contain">
+                    </div>
+                    <div class="sm:col-span-7 space-y-2">
+                        <h3 id="modalProductName" class="font-heading font-black text-base sm:text-lg text-slate-900 leading-snug">
+                            Product Name
+                        </h3>
+                        <div class="flex items-baseline gap-2 pt-0.5">
+                            <span id="modalProductPrice" class="font-heading font-black text-xl sm:text-2xl text-slate-900">₹0.00</span>
+                            <span class="text-xs text-slate-500 font-medium">GST Included</span>
+                        </div>
+                        <p id="modalProductDesc" class="text-xs text-slate-600 leading-relaxed pt-1">
+                            Description
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Specs Matrix -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-3.5 space-y-2">
+                    <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Technical Specifications:</span>
+                    <div id="modalSpecsContainer" class="flex flex-wrap gap-1.5">
+                        <!-- Specs pills injected dynamically -->
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="space-y-1.5 pt-0.5">
+                    <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Highlights & Benefits:</span>
+                    <ul id="modalFeaturesList" class="space-y-1.5 text-xs text-slate-700">
+                        <!-- Features injected dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Store Verification Ribbon -->
+                <div class="p-3 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center gap-3 text-xs text-emerald-900">
+                    <i class="fa-solid fa-store text-emerald-600 text-lg"></i>
+                    <div>
+                        <strong class="block font-semibold">Available at Fishing Point Alappuzha</strong>
+                        <span class="text-[11px] text-emerald-700">Walk-in pickup near Iron Bridge, Mullakkal • Free professional machine line spooling</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Sticky Footer Actions -->
+            <div class="p-3.5 sm:p-5 border-t border-slate-100 bg-slate-50/90 flex flex-col sm:flex-row gap-2">
+                <button id="modalWhatsAppBtn" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wide flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Order via WhatsApp (Pappan)</span>
+                </button>
+                <a href="tel:+919567330366" class="px-4 py-3 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-800 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>Call Shop</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Embedded Products Database for 0ms Modal Latency -->
+    <script>
+        window.PRODUCTS_DB = [{"id": "sh-1", "brand": "Shimano", "name": "Shimano 2026 Miravel A C3000 HG", "category": "Reels", "category_name": "Spinning Reel", "price": "₹11,915.00", "img": "https://tackletips.in/uploads/product/thumb_images/17930765757386.jpg", "badge": "New Arrival", "specs": ["C3000 HG", "6.2:1 Ratio", "9kg Drag", "Ci4+ Body"], "desc": "The Shimano 2026 Miravel A C3000 HG delivers tournament-grade saltwater durability, ultra-smooth drag resistance, and precise line management for backwater and deep-sea angling across Kerala.", "features": ["Saltwater sealed construction with corrosion-resistant bearings", "Machined aluminum spool with cold-forged precision gearing", "Free professional machine braid spooling at our Alappuzha shop"]}, {"id": "sh-2", "brand": "Shimano", "name": "Shimano Saragosa SW 8000HGA", "category": "Reels", "category_name": "Heavy Saltwater Reel", "price": "₹31,277.00", "img": "https://tackletips.in/uploads/product/thumb_images/17928308617828.png", "badge": "Offshore Heavy", "specs": ["SW 8000", "5.6:1 Ratio", "15kg Drag", "X-Shield"], "desc": "The Shimano Saragosa SW 8000HGA delivers tournament-grade saltwater durability, ultra-smooth drag resistance, and precise line management for backwater and deep-sea angling across Kerala.", "features": ["Saltwater sealed construction with corrosion-resistant bearings", "Machined aluminum spool with cold-forged precision gearing", "Free professional machine braid spooling at our Alappuzha shop"]}, {"id": "sh-3", "brand": "Shimano", "name": "Shimano 2026 Nexave C3000HGJ", "category": "Reels", "category_name": "Spinning Reel", "price": "₹5,222.00", "img": "https://tackletips.in/uploads/product/thumb_images/17908360087192.jpg", "badge": "Best Seller", "specs": ["C3000 HG", "6.2:1 Ratio", "8.5kg Drag", "AR-C Spool"], "desc": "The Shimano 2026 Nexave C3000HGJ delivers tournament-grade saltwater durability, ultra-smooth drag resistance, and precise line management for backwater and deep-sea angling across Kerala.", "features": ["Saltwater sealed construction with corrosion-resistant bearings", "Machined aluminum spool with cold-forged precision gearing", "Free professional machine braid spooling at our Alappuzha shop"]}, {"id": "sh-4", "brand": "Shimano", "name": "Shimano 2025 Nasci 1000D", "category": "Reels", "category_name": "Ultra-Light Reel", "price": "₹8,556.00", "img": "https://tackletips.in/uploads/product/thumb_images/17908374768761.jpg", "badge": "Backwater Special", "specs": ["1000 Size", "5.0:1 Ratio", "3kg Drag", "CoreProtect"], "desc": "The Shimano 2025 Nasci 1000D delivers tournament-grade saltwater durability, ultra-smooth drag resistance, and precise line management for backwater and deep-sea angling across Kerala.", "features": ["Saltwater sealed construction with corrosion-resistant bearings", "Machined aluminum spool with cold-forged precision gearing", "Free professional machine braid spooling at our Alappuzha shop"]}, {"id": "sh-5", "brand": "Shimano", "name": "Shimano Kairiki +8 150m Mantis Green", "category": "Lines", "category_name": "8X Braided Line", "price": "₹1,815.00", "img": "https://tackletips.in/uploads/product/thumb_images/17943810697542.jpg", "badge": "Japanese PE", "specs": ["150m Spool", "8-Carrier", "VT Method", "Mantis Green"], "desc": "The Shimano Kairiki +8 150m Mantis Green is woven from micro-pitch high-grade PE fibers, featuring ultra-smooth surface coating for effortless casting distance and zero stretch for instantaneous hook sets.", "features": ["Round 8-strand weave for whisper-quiet guide transit", "High abrasion resistance against oyster beds and rocky structure", "Exceptional knot tensile strength and color retention"]}, {"id": "sh-6", "brand": "Shimano", "name": "Shimano 2025 Tranx 400HGB Baitcaster", "category": "Reels", "category_name": "Baitcasting Reel", "price": "₹51,736.00", "img": "https://tackletips.in/uploads/product/thumb_images/17894523418242.jpg", "badge": "Heavy Duty", "specs": ["400 HG", "7.6:1 Ratio", "10kg Drag", "CoreProtect"], "desc": "The Shimano 2025 Tranx 400HGB Baitcaster delivers tournament-grade saltwater durability, ultra-smooth drag resistance, and precise line management for backwater and deep-sea angling across Kerala.", "features": ["Saltwater sealed construction with corrosion-resistant bearings", "Machined aluminum spool with cold-forged precision gearing", "Free professional machine braid spooling at our Alappuzha shop"]}, {"id": "dw-1", "brand": "Daiwa", "name": "Daiwa 2026 ZX 5000XHARK Spinning Reel", "category": "Reels", "category_name": "Spinning Reel", "price": "₹4,360.00", "img": "https://tackletips.in/uploads/product/thumb_images/17925760544300.jpg", "badge": "New Release", "specs": ["5000 Size", "6.2:1 Ratio", "12kg Drag", "Aluminum Spool"], "desc": "The Daiwa 2026 ZX 5000XHARK Spinning Reel delivers tournament-grade saltwater durability, ultra-smooth drag resistance, and precise line management for backwater and deep-sea angling across Kerala.", "features": ["Saltwater sealed construction with corrosion-resistant bearings", "Machined aluminum spool with cold-forged precision gearing", "Free professional machine braid spooling at our Alappuzha shop"]}, {"id": "dw-2", "brand": "Daiwa", "name": "Daiwa 2025 Revros LT 4000 HG-CXH", "category": "Reels", "category_name": "Spinning Reel", "price": "₹5,800.00", "img": "https://tackletips.in/uploads/product/thumb_images/17851394555887.jpg", "badge": "Tough LT", "specs": ["4000 HG", "6.2:1 Ratio", "12kg Drag", "Air Rotor"], "desc": "The Daiwa 2025 Revros LT 4000 HG-CXH delivers tournament-grade saltwater durability, ultra-smooth drag resistance, and precise line management for backwater and deep-sea angling across Kerala.", "features": ["Saltwater sealed construction with corrosion-resistant bearings", "Machined aluminum spool with cold-forged precision gearing", "Free professional machine braid spooling at our Alappuzha shop"]}, {"id": "dw-3", "brand": "Daiwa", "name": "Daiwa Tatula Travel Baitcasting Rod 694HB", "category": "Rods", "category_name": "4-Piece Travel Rod", "price": "₹11,470.00", "img": "https://tackletips.in/uploads/product/thumb_images/17926500275362.png", "badge": "Travel Ready", "specs": ["6'9\" Length", "4-Piece", "Heavy Power", "HVF Carbon"], "desc": "Engineered for high sensitivity and backbone power, the Daiwa Tatula Travel Baitcasting Rod 694HB features high-modulus carbon blanks and tangle-free guides tuned for estuary casting and shore jigging.", "features": ["High-density Japanese carbon blank for long-distance casting", "Heavy-duty oxide guide rings with anti-wrap tip design", "Ergonomic non-slip EVA handle designed for humid coastal conditions"]}, {"id": "dw-4", "brand": "Daiwa", "name": "Daiwa J-Braid Expedition 300m Multi-Color", "category": "Lines", "category_name": "Izanas 8X Braid", "price": "₹2,613.00", "img": "https://tackletips.in/uploads/product/thumb_images/17637158231977.jpg", "badge": "Silicon Coated", "specs": ["300m Spool", "50lb Test", "Izanas Fiber", "Multi-Color"], "desc": "The Daiwa J-Braid Expedition 300m Multi-Color is woven from micro-pitch high-grade PE fibers, featuring ultra-smooth surface coating for effortless casting distance and zero stretch for instantaneous hook sets.", "features": ["Round 8-strand weave for whisper-quiet guide transit", "High abrasion resistance against oyster beds and rocky structure", "Exceptional knot tensile strength and color retention"]}, {"id": "dw-5", "brand": "Daiwa", "name": "Daiwa Saltiga Frother 200F Blue Back", "category": "Lures", "category_name": "Offshore Floating Popper", "price": "₹3,702.00", "img": "https://tackletips.in/uploads/product/thumb_images/17936191673528.jpg", "badge": "GT & Barra", "specs": ["200mm", "110g", "Through Wire", "Blue Back"], "desc": "The Daiwa Saltiga Frother 200F Blue Back produces an irresistible erratic action with realistic holographic flash and resonant internal rattles that trigger predatory strikes from Barramundi (Kalanji) and Mangrove Jack.", "features": ["Heavy-duty through-wire construction for monster predator handling", "Armed with razor-sharp anti-rust saltwater treble hooks", "Hydrodynamic balance for stable action even in strong tidal currents"]}, {"id": "dw-6", "brand": "Daiwa", "name": "Daiwa Saltiga Cuddler 185F Clear Top Yellow", "category": "Lures", "category_name": "Floating Stickbait", "price": "₹2,158.00", "img": "https://tackletips.in/uploads/product/thumb_images/17936909861523.jpg", "badge": "Surface Action", "specs": ["185mm", "75g", "Long Cast", "Saltwater Tuned"], "desc": "The Daiwa Saltiga Cuddler 185F Clear Top Yellow produces an irresistible erratic action with realistic holographic flash and resonant internal rattles that trigger predatory strikes from Barramundi (Kalanji) and Mangrove Jack.", "features": ["Heavy-duty through-wire construction for monster predator handling", "Armed with razor-sharp anti-rust saltwater treble hooks", "Hydrodynamic balance for stable action even in strong tidal currents"]}, {"id": "ok-1", "brand": "Okuma", "name": "Okuma Wave Power Spinning Rod 9ft", "category": "Rods", "category_name": "Spinning Rod", "price": "₹1,450.00", "img": "https://tackletips.in/uploads/product/thumb_images/17942938403839.jpg", "badge": "High Value", "specs": ["9'0\" Length", "2-Piece", "20-60g Lure", "SiC Guides"], "desc": "Engineered for high sensitivity and backbone power, the Okuma Wave Power Spinning Rod 9ft features high-modulus carbon blanks and tangle-free guides tuned for estuary casting and shore jigging.", "features": ["High-density Japanese carbon blank for long-distance casting", "Heavy-duty oxide guide rings with anti-wrap tip design", "Ergonomic non-slip EVA handle designed for humid coastal conditions"]}, {"id": "ok-2", "brand": "Okuma", "name": "Okuma Wave Power Spinning Rod 8ft", "category": "Rods", "category_name": "Spinning Rod", "price": "₹1,380.00", "img": "https://tackletips.in/uploads/product/thumb_images/17942937875818.jpg", "badge": "Shore Cast", "specs": ["8'0\" Length", "2-Piece", "15-45g Lure", "Graphite Blank"], "desc": "Engineered for high sensitivity and backbone power, the Okuma Wave Power Spinning Rod 8ft features high-modulus carbon blanks and tangle-free guides tuned for estuary casting and shore jigging.", "features": ["High-density Japanese carbon blank for long-distance casting", "Heavy-duty oxide guide rings with anti-wrap tip design", "Ergonomic non-slip EVA handle designed for humid coastal conditions"]}, {"id": "ok-3", "brand": "Okuma", "name": "Okuma Competition Spinning Rod 7ft", "category": "Rods", "category_name": "Carbon Rod", "price": "₹1,550.00", "img": "https://tackletips.in/uploads/product/thumb_images/17942933241585.jpg", "badge": "Backwater Rig", "specs": ["7'0\" Length", "2-Piece", "10-30g Lure", "EVA Handle"], "desc": "Engineered for high sensitivity and backbone power, the Okuma Competition Spinning Rod 7ft features high-modulus carbon blanks and tangle-free guides tuned for estuary casting and shore jigging.", "features": ["High-density Japanese carbon blank for long-distance casting", "Heavy-duty oxide guide rings with anti-wrap tip design", "Ergonomic non-slip EVA handle designed for humid coastal conditions"]}, {"id": "mc-1", "brand": "Major Craft", "name": "Major Craft Giant Killing 5G Offshore Casting GK5C-76", "category": "Rods", "category_name": "Offshore Casting Rod", "price": "₹17,725.00", "img": "https://tackletips.in/uploads/product/thumb_images/17930961108835.jpg", "badge": "Toray R360", "specs": ["7'6\" Length", "Max 80g", "PE 2-4", "Titanium Frame"], "desc": "Engineered for high sensitivity and backbone power, the Major Craft Giant Killing 5G Offshore Casting GK5C-76 features high-modulus carbon blanks and tangle-free guides tuned for estuary casting and shore jigging.", "features": ["High-density Japanese carbon blank for long-distance casting", "Heavy-duty oxide guide rings with anti-wrap tip design", "Ergonomic non-slip EVA handle designed for humid coastal conditions"]}, {"id": "mc-2", "brand": "Major Craft", "name": "Major Craft Crosride 1G XR1-1002M Shore Jigging", "category": "Rods", "category_name": "Shore Jigging Rod", "price": "₹13,007.00", "img": "https://tackletips.in/uploads/product/thumb_images/17927558801244.png", "badge": "Shore Jigging", "specs": ["10'0\" Length", "30-50g Lure", "Fuji Guides", "Carbon X"], "desc": "Engineered for high sensitivity and backbone power, the Major Craft Crosride 1G XR1-1002M Shore Jigging features high-modulus carbon blanks and tangle-free guides tuned for estuary casting and shore jigging.", "features": ["High-density Japanese carbon blank for long-distance casting", "Heavy-duty oxide guide rings with anti-wrap tip design", "Ergonomic non-slip EVA handle designed for humid coastal conditions"]}, {"id": "sc-1", "brand": "Scaless", "name": "Scaless Kukri 60 Pink Phantom Minnow", "category": "Lures", "category_name": "Sinking Minnow", "price": "₹590.00", "img": "https://tackletips.in/uploads/product/thumb_images/17943010181211.jpg", "badge": "Mangrove Jack", "specs": ["60mm Length", "7.5g Weight", "Sinking", "BKK Trebles"], "desc": "The Scaless Kukri 60 Pink Phantom Minnow produces an irresistible erratic action with realistic holographic flash and resonant internal rattles that trigger predatory strikes from Barramundi (Kalanji) and Mangrove Jack.", "features": ["Heavy-duty through-wire construction for monster predator handling", "Armed with razor-sharp anti-rust saltwater treble hooks", "Hydrodynamic balance for stable action even in strong tidal currents"]}, {"id": "sc-2", "brand": "Scaless", "name": "Scaless Kratos 115 Silver Storm Popper", "category": "Lures", "category_name": "Topwater Popper", "price": "₹998.00", "img": "https://tackletips.in/uploads/product/thumb_images/17939481801060.png", "badge": "Barramundi Special", "specs": ["115mm Length", "28g Weight", "Chugger Cup", "3X Hooks"], "desc": "The Scaless Kratos 115 Silver Storm Popper produces an irresistible erratic action with realistic holographic flash and resonant internal rattles that trigger predatory strikes from Barramundi (Kalanji) and Mangrove Jack.", "features": ["Heavy-duty through-wire construction for monster predator handling", "Armed with razor-sharp anti-rust saltwater treble hooks", "Hydrodynamic balance for stable action even in strong tidal currents"]}, {"id": "sc-3", "brand": "Scaless", "name": "Scaless Kratos 115 Candy Pink Popper", "category": "Lures", "category_name": "Topwater Popper", "price": "₹998.00", "img": "https://tackletips.in/uploads/product/thumb_images/17939481432973.png", "badge": "High Visibility", "specs": ["115mm Length", "28g Weight", "Loud Rattle", "Through Wire"], "desc": "The Scaless Kratos 115 Candy Pink Popper produces an irresistible erratic action with realistic holographic flash and resonant internal rattles that trigger predatory strikes from Barramundi (Kalanji) and Mangrove Jack.", "features": ["Heavy-duty through-wire construction for monster predator handling", "Armed with razor-sharp anti-rust saltwater treble hooks", "Hydrodynamic balance for stable action even in strong tidal currents"]}, {"id": "sc-4", "brand": "Scaless", "name": "Scaless Naga 70 Hollow Pink Vibrating Lure", "category": "Lures", "category_name": "Lipless Vibe", "price": "₹510.00", "img": "https://tackletips.in/uploads/product/thumb_images/17938657243805.jpg", "badge": "Deep Canal", "specs": ["70mm Length", "16g Weight", "High Frequency", "VMC Hooks"], "desc": "The Scaless Naga 70 Hollow Pink Vibrating Lure produces an irresistible erratic action with realistic holographic flash and resonant internal rattles that trigger predatory strikes from Barramundi (Kalanji) and Mangrove Jack.", "features": ["Heavy-duty through-wire construction for monster predator handling", "Armed with razor-sharp anti-rust saltwater treble hooks", "Hydrodynamic balance for stable action even in strong tidal currents"]}, {"id": "bkk-1", "brand": "BKK", "name": "BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack)", "category": "Hooks", "category_name": "4X Treble Hooks", "price": "₹655.00", "img": "https://tackletips.in/uploads/product/thumb_images/16654695514082.jpg", "badge": "Hand Ground", "specs": ["Size #2/0", "4X Strength", "Ultra-Antirust", "Micro Ring"], "desc": "The BKK Raptor-Z Heavy Treble Hooks 2/0 (Pack) is forged from high-carbon steel with proprietary anti-rust coating, ensuring penetration power and structural rigidity against high-drag fighting fish.", "features": ["Micro-ring eyelet design to avoid damaging leader line", "Chemically sharpened cone points for instant hook penetration", "4X heavy wire gauge designed for hard-mouthed predators"]}, {"id": "bkk-2", "brand": "BKK", "name": "BKK Solid Core Assist Cord 50LB", "category": "Hooks", "category_name": "Jigging Assist Line", "price": "₹430.00", "img": "https://tackletips.in/uploads/product/thumb_images/16663369022641.jpg", "badge": "High Tenacity", "specs": ["50LB Test", "High UV Cut", "Abrasion Proof", "Pliable Core"], "desc": "The BKK Solid Core Assist Cord 50LB is forged from high-carbon steel with proprietary anti-rust coating, ensuring penetration power and structural rigidity against high-drag fighting fish.", "features": ["Micro-ring eyelet design to avoid damaging leader line", "Chemically sharpened cone points for instant hook penetration", "4X heavy wire gauge designed for hard-mouthed predators"]}, {"id": "bkk-3", "brand": "BKK", "name": "BKK Double Assist Hook Loose Pack", "category": "Hooks", "category_name": "Jig Assist Hooks", "price": "₹175.00", "img": "https://tackletips.in/uploads/product/thumb_images/17912741682558.jpg", "badge": "Pre-Rigged", "specs": ["Twin Rig", "Glow Tinsel", "Sharp Cone Point", "Forged Bend"], "desc": "The BKK Double Assist Hook Loose Pack is forged from high-carbon steel with proprietary anti-rust coating, ensuring penetration power and structural rigidity against high-drag fighting fish.", "features": ["Micro-ring eyelet design to avoid damaging leader line", "Chemically sharpened cone points for instant hook penetration", "4X heavy wire gauge designed for hard-mouthed predators"]}, {"id": "gf-1", "brand": "Gfin", "name": "Gfin SW Shore Cast Braid 300m 70LB PE 4.0", "category": "Lines", "category_name": "Saltwater Braid", "price": "₹2,885.00", "img": "https://tackletips.in/uploads/product/thumb_images/17924765711885.jpg", "badge": "Shore Jigging", "specs": ["300m Spool", "70LB / PE 4.0", "Zero Stretch", "Blue Striped"], "desc": "The Gfin SW Shore Cast Braid 300m 70LB PE 4.0 is woven from micro-pitch high-grade PE fibers, featuring ultra-smooth surface coating for effortless casting distance and zero stretch for instantaneous hook sets.", "features": ["Round 8-strand weave for whisper-quiet guide transit", "High abrasion resistance against oyster beds and rocky structure", "Exceptional knot tensile strength and color retention"]}, {"id": "mh-1", "brand": "Meiho", "name": "Meiho Cabin 2040 Tackle Box Grey", "category": "Accessories", "category_name": "Utility Tackle Box", "price": "₹750.00", "img": "https://tackletips.in/uploads/product/thumb_images/17950665527402.jpg", "badge": "Made in Japan", "specs": ["Polypropylene", "Worm Proof", "Variable Slots", "One-Hand Lock"], "desc": "The Meiho Cabin 2040 Tackle Box Grey provides durable, high-impact storage with adjustable compartments and secure latching to protect delicate lures and terminal tackle from salt spray.", "features": ["Heavy-duty polymer body with high impact resistance", "Customizable divider slots with silicone seal protection", "One-hand quick release locking mechanism"]}];
+    </script>
+
     <!-- Script with Cache Buster -->
-    <script src="script.js?v=4.0"></script>
+    <script src="script.js?v=5.0"></script>
 </body>
 </html>
